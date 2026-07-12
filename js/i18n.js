@@ -14,7 +14,8 @@ window.MASPLANLOT_I18N = {
     heroTitle: 'Участки на карте.<br>Клиенты в CRM.<br>Генплан в CAD.',
     heroSub:
       'Два приложения для Windows и macOS: продажи посёлков и чертёж генплана. Один аккаунт, облако, офлайн.',
-    heroCtaStart: 'Скачать',
+    heroCtaWin: 'Скачать для Windows',
+    heroCtaMac: 'Скачать для macOS',
     usesTitle: 'Для кого и какие задачи',
     usesIntro:
       'MasPlanLot — платформа для продажи и проектирования земельных участков. Обводите лоты на генплане или карте, ведите клиентов и сделки, показывайте посёлок покупателям и выгружайте объявления на доски.',
@@ -79,7 +80,8 @@ window.MASPLANLOT_I18N = {
     heroTitle: 'Lots on map.<br>Clients in CRM.<br>Master plan in CAD.',
     heroSub:
       'Two apps for Windows and macOS: village sales and master-plan drafting. One account, cloud sync, offline.',
-    heroCtaStart: 'Download',
+    heroCtaWin: 'Download for Windows',
+    heroCtaMac: 'Download for macOS',
     usesTitle: 'Who it\'s for & what it solves',
     usesIntro:
       'MasPlanLot is a platform for selling and designing land lots. Draw lots on a master plan or map, manage clients and deals, showcase your community to buyers, and export listings to marketplaces.',
@@ -144,7 +146,8 @@ window.MASPLANLOT_I18N = {
     heroTitle: 'Parcele na mapi.<br>Klijenti u CRM.<br>Genplan u CAD.',
     heroSub:
       'Dve aplikacije za Windows i macOS: prodaja naselja i crtanje genplana. Jedan nalog, oblak, offline.',
-    heroCtaStart: 'Preuzmi',
+    heroCtaWin: 'Preuzmi za Windows',
+    heroCtaMac: 'Preuzmi za macOS',
     usesTitle: 'Za koga i koje zadatke',
     usesIntro:
       'MasPlanLot je platforma za prodaju i projektovanje zemljišnih parcela. Obeležite parcele na genplanu ili mapi, vodite klijente i poslove, pokažite naselje kupcima i izvezite oglase na portale.',

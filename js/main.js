@@ -74,17 +74,24 @@
     }
   }
 
-  function initDownloads() {
-    const links = [
-      ['crmWin', D.crm?.win],
-      ['crmMac', D.crm?.mac],
-      ['cadWin', D.cad?.win],
-      ['cadMac', D.cad?.mac],
+  function applyDownloadLinks(crm, cad) {
+    const map = [
+      ['crmWin', crm?.win],
+      ['crmMac', crm?.mac],
+      ['cadWin', cad?.win],
+      ['cadMac', cad?.mac],
+      // Hero CTAs point to the CRM installer for the chosen platform.
+      ['heroWin', crm?.win],
+      ['heroMac', crm?.mac],
     ];
-    links.forEach(([id, href]) => {
+    map.forEach(([id, href]) => {
       const el = document.getElementById(id);
       if (el && href) el.href = href;
     });
+  }
+
+  function initDownloads() {
+    applyDownloadLinks(D.crm, D.cad);
     document.querySelectorAll('[data-version]').forEach((el) => {
       el.textContent = 'v' + V;
     });
@@ -98,16 +105,7 @@
 
     try {
       const latest = await window.fetchMasPlanLotReleaseDownloads();
-      const map = [
-        ['crmWin', latest.crm?.win],
-        ['crmMac', latest.crm?.mac],
-        ['cadWin', latest.cad?.win],
-        ['cadMac', latest.cad?.mac],
-      ];
-      map.forEach(([id, href]) => {
-        const el = document.getElementById(id);
-        if (el && href) el.href = href;
-      });
+      applyDownloadLinks(latest.crm, latest.cad);
       if (latest.version) {
         document.querySelectorAll('[data-version]').forEach((el) => {
           el.textContent = 'v' + latest.version;
