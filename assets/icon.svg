@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- App icon background -->
+  <rect width="512" height="512" rx="96" fill="#1e293b"/>
+
+  <!-- Blueprint paper glow -->
+  <rect x="88" y="108" width="320" height="296" rx="20" fill="#f0f9ff" opacity="0.08"/>
+
+  <!-- Rolled paper (left cylinder) -->
+  <rect x="88" y="108" width="56" height="296" rx="28" fill="#94a3b8"/>
+  <rect x="96" y="116" width="40" height="280" rx="20" fill="#cbd5e1"/>
+  <ellipse cx="116" cy="108" rx="28" ry="14" fill="#e2e8f0"/>
+  <ellipse cx="116" cy="404" rx="28" ry="14" fill="#94a3b8"/>
+
+  <!-- Unrolled blueprint sheet -->
+  <rect x="132" y="108" width="276" height="296" rx="16" fill="#f8fafc"/>
+  <rect x="132" y="108" width="276" height="296" rx="16" stroke="#334155" stroke-width="10"/>
+
+  <!-- Grid lines (blueprint style) -->
+  <g stroke="#bfdbfe" stroke-width="3" opacity="0.6">
+    <line x1="160" y1="140" x2="380" y2="140"/>
+    <line x1="160" y1="200" x2="380" y2="200"/>
+    <line x1="160" y1="260" x2="380" y2="260"/>
+    <line x1="160" y1="320" x2="380" y2="320"/>
+    <line x1="200" y1="130" x2="200" y2="382"/>
+    <line x1="270" y1="130" x2="270" y2="382"/>
+    <line x1="340" y1="130" x2="340" y2="382"/>
+  </g>
+
+  <!-- Road / path (dashed) -->
+  <path d="M148 290 H388" stroke="#64748b" stroke-width="6" stroke-dasharray="14 10" stroke-linecap="round"/>
+
+  <!-- Lot polygons — status colors -->
+  <!-- Available (green) -->
+  <rect x="158" y="148" width="72" height="56" rx="6" fill="#22c55e" fill-opacity="0.45" stroke="#16a34a" stroke-width="5"/>
+  <rect x="248" y="148" width="56" height="44" rx="5" fill="#22c55e" fill-opacity="0.35" stroke="#16a34a" stroke-width="5"/>
+
+  <!-- Reserved (yellow) -->
+  <rect x="158" y="218" width="48" height="58" rx="5" fill="#eab308" fill-opacity="0.45" stroke="#ca8a04" stroke-width="5"/>
+  <polygon points="320,218 380,218 380,276 350,276 320,246" fill="#eab308" fill-opacity="0.4" stroke="#ca8a04" stroke-width="5" stroke-linejoin="round"/>
+
+  <!-- Sold (red) -->
+  <rect x="220" y="300" width="80" height="52" rx="6" fill="#ef4444" fill-opacity="0.45" stroke="#dc2626" stroke-width="5"/>
+  <rect x="318" y="300" width="58" height="52" rx="5" fill="#ef4444" fill-opacity="0.35" stroke="#dc2626" stroke-width="5"/>
+
+  <!-- Small building block -->
+  <rect x="158" y="318" width="44" height="34" rx="4" fill="#3b82f6" fill-opacity="0.3" stroke="#2563eb" stroke-width="4"/>
+</svg>
