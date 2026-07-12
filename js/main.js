@@ -90,6 +90,34 @@
     });
   }
 
+  async function initDownloadsFromGitHub() {
+    if (typeof window.fetchMasPlanLotReleaseDownloads !== 'function') {
+      initDownloads();
+      return;
+    }
+
+    try {
+      const latest = await window.fetchMasPlanLotReleaseDownloads();
+      const map = [
+        ['crmWin', latest.crm?.win],
+        ['crmMac', latest.crm?.mac],
+        ['cadWin', latest.cad?.win],
+        ['cadMac', latest.cad?.mac],
+      ];
+      map.forEach(([id, href]) => {
+        const el = document.getElementById(id);
+        if (el && href) el.href = href;
+      });
+      if (latest.version) {
+        document.querySelectorAll('[data-version]').forEach((el) => {
+          el.textContent = 'v' + latest.version;
+        });
+      }
+    } catch {
+      initDownloads();
+    }
+  }
+
   function initMobileNav() {
     const nav = document.getElementById('mobileNav');
     const open = document.getElementById('menuToggle');
@@ -165,7 +193,7 @@
   }
 
   initAppLinks();
-  initDownloads();
+  void initDownloadsFromGitHub();
   initMobileNav();
   initI18n();
 })();

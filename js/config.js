@@ -2,6 +2,11 @@
 window.MASPLANLOT_CONFIG = {
   APP_URL: '.',
   VERSION: '0.4.0',
+  RELEASES: {
+    owner: 'daniilcg',
+    repo: 'MasPlanLot',
+    apiLatest: 'https://api.github.com/repos/daniilcg/MasPlanLot/releases/latest',
+  },
   PRICING: {
   "crm": {
     "monthRub": 7900,
@@ -30,12 +35,12 @@ window.MASPLANLOT_CONFIG = {
 },
   DOWNLOADS: {
     crm: {
-      win: 'https://github.com/daniilcg/MasPlanLot-crmcad/releases/latest/download/MasPlanLot.CRM.Setup.0.4.0.exe',
-      mac: 'https://github.com/daniilcg/MasPlanLot-crmcad/releases/latest/download/MasPlanLot.CRM-0.4.0-mac.dmg',
+      win: 'https://github.com/daniilcg/MasPlanLot/releases/latest/download/MasPlanLot.CRM.Setup.0.4.0.exe',
+      mac: 'https://github.com/daniilcg/MasPlanLot/releases/latest/download/MasPlanLot.CRM-0.4.0-mac.dmg',
     },
     cad: {
-      win: 'https://github.com/daniilcg/MasPlanLot-crmcad/releases/latest/download/MasPlanLot.CAD.Setup.0.4.0.exe',
-      mac: 'https://github.com/daniilcg/MasPlanLot-crmcad/releases/latest/download/MasPlanLot.CAD-0.4.0-mac.dmg',
+      win: 'https://github.com/daniilcg/MasPlanLot/releases/latest/download/MasPlanLot.CAD.Setup.0.4.0.exe',
+      mac: 'https://github.com/daniilcg/MasPlanLot/releases/latest/download/MasPlanLot.CAD-0.4.0-mac.dmg',
     },
   },
 };
