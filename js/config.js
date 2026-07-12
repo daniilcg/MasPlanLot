@@ -30,12 +30,12 @@ window.MASPLANLOT_CONFIG = {
 },
   DOWNLOADS: {
     crm: {
-      win: 'https://github.com/daniilcg/MasPlanLot-crmcad/releases/latest/download/MasPlanLot%20CRM%20Setup%200.4.0.exe',
-      mac: 'https://github.com/daniilcg/MasPlanLot-crmcad/releases/latest/download/MasPlanLot%20CRM-0.4.0-mac.dmg',
+      win: 'https://github.com/daniilcg/MasPlanLot-crmcad/releases/latest/download/MasPlanLot.CRM.Setup.0.4.0.exe',
+      mac: 'https://github.com/daniilcg/MasPlanLot-crmcad/releases/latest/download/MasPlanLot.CRM-0.4.0-mac.dmg',
     },
     cad: {
-      win: 'https://github.com/daniilcg/MasPlanLot-crmcad/releases/latest/download/MasPlanLot%20CAD%20Setup%200.4.0.exe',
-      mac: 'https://github.com/daniilcg/MasPlanLot-crmcad/releases/latest/download/MasPlanLot%20CAD-0.4.0-mac.dmg',
+      win: 'https://github.com/daniilcg/MasPlanLot-crmcad/releases/latest/download/MasPlanLot.CAD.Setup.0.4.0.exe',
+      mac: 'https://github.com/daniilcg/MasPlanLot-crmcad/releases/latest/download/MasPlanLot.CAD-0.4.0-mac.dmg',
     },
   },
 };
