@@ -30,7 +30,7 @@
           <option value="en">EN</option>
           <option value="sr">SR</option>
         </select>
-        <a href="#download" class="btn btn--ghost" data-i18n="login">Скачать</a>
+        <a href="#pricing" class="btn btn--ghost" data-i18n="headerPricing">Цены</a>
         <a href="#download" class="btn btn--primary" data-i18n="trial">14 дней бесплатно</a>
         <button type="button" class="menu-toggle" id="menuToggle" data-i18n-aria="menuOpen" aria-label="Меню">☰</button>
       </div>
@@ -45,7 +45,7 @@
         <a href="#pricing" data-i18n="pricing">Цены</a>
         <a href="#download" data-i18n="download">Скачать</a>
       </nav>
-      <a href="#download" class="btn btn--outline" data-i18n="login">Скачать</a>
+      <a href="#pricing" class="btn btn--outline" data-i18n="headerPricing">Цены</a>
       <a href="#download" class="btn btn--primary" data-i18n="trial">14 дней бесплатно</a>
     </div>
   </div>
@@ -99,8 +99,6 @@
             <img src="assets/icon.svg" alt="" width="40" height="40">
             <div>
               <h3>MasPlanLot CRM</h3>
-              <p class="box__price" data-price="crm-month">7 900 ₽/мес</p>
-              <p class="box__year" data-price="crm-year">79 000 ₽/год</p>
             </div>
           </div>
           <p class="box__lead" data-i18n="crmLead">Продажи земельных участков и посёлков — всё в одном приложении.</p>
@@ -111,7 +109,7 @@
             <li data-i18n="crmF4">Импорт из Excel и 1С</li>
             <li data-i18n="crmF5">Avito XML, PDF-подборки, лид-форма на витрине</li>
           </ul>
-          <a href="#download" class="btn btn--primary btn--block" data-i18n="tryCrm">Скачать CRM</a>
+          <a href="#pricing" class="btn btn--outline btn--block" data-i18n="productPricingCta">Тарифы и оплата</a>
         </article>
       </div>
     </section>
@@ -131,17 +129,18 @@
     <section class="section" id="pricing">
       <div class="container">
         <h2 class="section__title" data-i18n="pricingTitle">Цены</h2>
-        <p class="section__sub" data-i18n="pricingSub">14 дней бесплатно · помесячно или за год (−2 месяца) · T-Bank / PayPal</p>
+        <p class="section__sub" data-i18n="pricingSub">14 дней бесплатно · помесячно или за год (−2 месяца)</p>
         <div class="pricing pricing--solo">
           <article class="plan plan--best">
             <h3>MasPlanLot CRM</h3>
             <div class="plan__price" data-price="crm-month">7 900 ₽<small>/мес</small></div>
             <div class="plan__year" data-price="crm-year">79 000 ₽/год</div>
             <p data-i18n="planCrmDesc">Карта, клиенты, сделки, задачи · Avito — автозагрузка · без ограничения проектов</p>
-            <a href="#download" class="btn btn--primary btn--block" data-i18n="choosePlan">Скачать</a>
           </article>
         </div>
         <p class="pricing__usd" id="pricingUsd">USD: $99 /мес · за год: $990</p>
+        <div class="pricing__payment" data-i18n-html="pricingPayment"></div>
+        <p class="pricing__trial-link"><a href="#download" data-i18n="pricingDownloadLink">Скачать и начать 14‑дневный триал →</a></p>
       </div>
     </section>
 
@@ -165,7 +164,7 @@
             </a>
           </div>
         </div>
-        <p class="download__note" data-i18n-html="downloadNote">После оплаты вы получите лицензионный ключ по email и активируете его в приложении.</p>
+        <p class="download__note" data-i18n="downloadNote">После установки войдите в аккаунт или зарегистрируйтесь — триал 14 дней начнётся автоматически.</p>
       </div>
     </section>
   </main>
