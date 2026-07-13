@@ -606,6 +606,15 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Support form */
+.support-form__honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .support-form {
   max-width: 34rem;
   margin: 0 auto;

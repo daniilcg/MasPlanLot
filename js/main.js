@@ -223,7 +223,11 @@
     const errorEl = document.getElementById('supportError');
     const successEl = document.getElementById('supportSuccess');
     const submitBtn = document.getElementById('supportSubmit');
+    const subjectHidden = document.getElementById('supportFormSubject');
+    const nextHidden = document.getElementById('supportFormNext');
     const supportTo = (cfg.PAYMENTS || {}).licenseEmail || 'segalcomminc@gmail.com';
+
+    form.action = 'https://formsubmit.co/' + supportTo;
 
     function pack() {
       const dict = window.MASPLANLOT_I18N || {};
@@ -246,20 +250,16 @@
       }
     }
 
-    function sendViaMailto(data) {
-      const body = 'From: ' + data.email + '\n\n' + data.message;
-      const url =
-        'mailto:' +
-        encodeURIComponent(supportTo) +
-        '?subject=' +
-        encodeURIComponent('[MasPlanLot] ' + data.subject) +
-        '&body=' +
-        encodeURIComponent(body);
-      window.location.href = url;
-      return true;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+      showSuccess();
+      form.reset();
+      const cleanUrl = window.location.pathname + (window.location.hash || '#support');
+      window.history.replaceState(null, '', cleanUrl);
+      document.getElementById('support')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    form.addEventListener('submit', async (event) => {
+    form.addEventListener('submit', (event) => {
       event.preventDefault();
       const t = pack();
 
@@ -295,43 +295,13 @@
         submitBtn.textContent = t.supportSending || 'Sending…';
       }
 
-      const payload = { email, subject, message };
-      let sent = false;
-
-      try {
-        const res = await fetch('https://formsubmit.co/ajax/' + encodeURIComponent(supportTo), {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify({
-            email,
-            subject: '[MasPlanLot] ' + subject,
-            message,
-            _subject: '[MasPlanLot] ' + subject,
-            _template: 'table',
-            _captcha: 'false',
-          }),
-        });
-        if (res.ok) sent = true;
-      } catch {
-        /* fallback below */
+      if (subjectHidden) subjectHidden.value = '[MasPlanLot] ' + subject;
+      if (nextHidden) {
+        const base = window.location.origin + window.location.pathname;
+        nextHidden.value = base + '?sent=1#support';
       }
 
-      if (!sent) sent = sendViaMailto(payload);
-
-      if (sent) {
-        showSuccess();
-        form.reset();
-      } else {
-        showError(t.supportFailed || 'Send failed');
-      }
-
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = t.supportSend || 'Send';
-      }
+      form.submit();
     });
   }
 
