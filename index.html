@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css?v=6">
+  <link rel="stylesheet" href="css/styles.css?v=7">
 </head>
 <body>
 
@@ -58,8 +58,31 @@
             <a href="#get" class="btn btn--primary btn--lg" data-i18n="heroCta">Начать бесплатный период</a>
           </div>
         </div>
-        <div class="hero__shot glass">
-          <img id="heroShot" src="assets/img/MasPlanLot_CRM_swKCrYgi2p.png" alt="MasPlanLot CRM — генплан и карта" width="1200" height="750">
+        <div class="hero__gallery glass" id="heroGallery" aria-roledescription="carousel" data-i18n-aria="galleryLabel" aria-label="Интерфейс MasPlanLot CRM">
+          <div class="hero__slides">
+            <figure class="hero__slide is-active">
+              <img src="assets/img/MasPlanLot_CRM_swKCrYgi2p.png" alt="Генплан проекта в MasPlanLot CRM" width="1200" height="750">
+              <figcaption class="hero__caption glass" data-i18n="galleryPlan">Генплан и статусы объектов</figcaption>
+            </figure>
+            <figure class="hero__slide">
+              <img src="assets/img/MasPlanLot_CRM_poRYJNlVl6.png" alt="Рабочее место менеджера MasPlanLot CRM" width="1200" height="750" loading="lazy">
+              <figcaption class="hero__caption glass" data-i18n="galleryCrm">CRM и контроль продаж</figcaption>
+            </figure>
+            <figure class="hero__slide">
+              <img src="assets/img/MasPlanLot_CRM_5R6Hc4a8ne.png" alt="Управление объектами на генплане" width="1200" height="750" loading="lazy">
+              <figcaption class="hero__caption glass" data-i18n="galleryObjects">Управление объектами</figcaption>
+            </figure>
+            <figure class="hero__slide">
+              <img src="assets/img/MasPlanLot_CRM_xDuQqeszTj.jpg" alt="Спутниковая и кадастровая карта" width="1200" height="675" loading="lazy">
+              <figcaption class="hero__caption glass" data-i18n="galleryMap">Карта и кадастровые слои</figcaption>
+            </figure>
+          </div>
+          <div class="hero__dots" role="tablist" data-i18n-aria="galleryNavigation" aria-label="Навигация по галерее">
+            <button type="button" class="hero__dot is-active" data-slide="0" role="tab" aria-selected="true" data-i18n-aria="gallerySlide1" aria-label="Генплан"></button>
+            <button type="button" class="hero__dot" data-slide="1" role="tab" aria-selected="false" data-i18n-aria="gallerySlide2" aria-label="CRM"></button>
+            <button type="button" class="hero__dot" data-slide="2" role="tab" aria-selected="false" data-i18n-aria="gallerySlide3" aria-label="Объекты"></button>
+            <button type="button" class="hero__dot" data-slide="3" role="tab" aria-selected="false" data-i18n-aria="gallerySlide4" aria-label="Карта"></button>
+          </div>
         </div>
       </div>
     </section>
@@ -162,9 +185,9 @@
     </div>
   </footer>
 
-  <script src="js/i18n.js?v=6"></script>
-  <script src="js/config.js?v=6"></script>
-  <script src="js/releases.js?v=6"></script>
-  <script src="js/main.js?v=6"></script>
+  <script src="js/i18n.js?v=7"></script>
+  <script src="js/config.js?v=7"></script>
+  <script src="js/releases.js?v=7"></script>
+  <script src="js/main.js?v=7"></script>
 </body>
 </html>

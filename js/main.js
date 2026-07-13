@@ -133,6 +133,86 @@
     nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setOpen(false)));
   }
 
+  function initHeroGallery() {
+    const gallery = document.getElementById('heroGallery');
+    if (!gallery) return;
+
+    const slides = Array.from(gallery.querySelectorAll('.hero__slide'));
+    const dots = Array.from(gallery.querySelectorAll('.hero__dot'));
+    if (slides.length < 2 || dots.length !== slides.length) return;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let active = 0;
+    let timer = null;
+    let pointerStart = null;
+
+    const show = (index) => {
+      active = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const selected = i === active;
+        slide.classList.toggle('is-active', selected);
+        slide.setAttribute('aria-hidden', selected ? 'false' : 'true');
+      });
+      dots.forEach((dot, i) => {
+        const selected = i === active;
+        dot.classList.toggle('is-active', selected);
+        dot.setAttribute('aria-selected', selected ? 'true' : 'false');
+        dot.tabIndex = selected ? 0 : -1;
+      });
+    };
+
+    const stop = () => {
+      if (timer) window.clearInterval(timer);
+      timer = null;
+    };
+
+    const start = () => {
+      stop();
+      if (!reduceMotion && !document.hidden) {
+        timer = window.setInterval(() => show(active + 1), 5500);
+      }
+    };
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        show(index);
+        start();
+      });
+    });
+
+    gallery.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      show(active + (event.key === 'ArrowRight' ? 1 : -1));
+      dots[active].focus();
+      start();
+    });
+
+    gallery.addEventListener('pointerdown', (event) => {
+      pointerStart = event.clientX;
+    });
+    gallery.addEventListener('pointerup', (event) => {
+      if (pointerStart == null) return;
+      const distance = event.clientX - pointerStart;
+      pointerStart = null;
+      if (Math.abs(distance) < 45) return;
+      show(active + (distance < 0 ? 1 : -1));
+      start();
+    });
+    gallery.addEventListener('pointercancel', () => {
+      pointerStart = null;
+    });
+
+    gallery.addEventListener('mouseenter', stop);
+    gallery.addEventListener('mouseleave', start);
+    gallery.addEventListener('focusin', stop);
+    gallery.addEventListener('focusout', start);
+    document.addEventListener('visibilitychange', () => (document.hidden ? stop() : start()));
+
+    show(0);
+    start();
+  }
+
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
@@ -191,5 +271,6 @@
   initAppLinks();
   void initDownloadsFromGitHub();
   initMobileNav();
+  initHeroGallery();
   initI18n();
 })();
