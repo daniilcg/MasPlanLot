@@ -1,7 +1,7 @@
 /** Auto-generated — node scripts/sync-marketing-config.js */
 window.MASPLANLOT_CONFIG = {
   APP_URL: 'https://mas-plan-lot-crmcad.vercel.app',
-  VERSION: '0.5.2',
+  VERSION: '0.5.3',
   RELEASES: {
     owner: 'daniilcg',
     repo: 'MasPlanLot',
@@ -21,7 +21,7 @@ window.MASPLANLOT_CONFIG = {
 },
   DOWNLOADS: {
     crm: {
-      win: 'https://github.com/daniilcg/MasPlanLot/releases/latest/download/MasPlanLot.CRM.Setup.0.5.2.exe',
+      win: 'https://github.com/daniilcg/MasPlanLot/releases/latest/download/MasPlanLot.CRM.Setup.0.5.3.exe',
     },
   },
   PAYMENTS: {
