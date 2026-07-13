@@ -39,7 +39,7 @@ window.MASPLANLOT_I18N = {
     buyPaypal: 'Купить · PayPal',
     buyYoomoney: 'Купить · ЮMoney',
     payAfterLicense:
-      'После оплаты напишите на <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F">segalcomminc@gmail.com</a> — пришлём ключ.',
+      'После оплаты напишите <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F">нам</a>, обязательно указав свой зарегистрированный e-mail — пришлём ключ.',
     downloadTitle: 'Скачать',
     downloadNote: 'Установите, войдите или зарегистрируйтесь — триал 14 дней начнётся автоматически.',
     periodMonth: '/мес',
@@ -84,7 +84,7 @@ window.MASPLANLOT_I18N = {
     buyPaypal: 'Buy · PayPal',
     buyYoomoney: 'Buy · YooMoney',
     payAfterLicense:
-      'After payment email <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20license">segalcomminc@gmail.com</a> for your license key.',
+      'After payment email <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20license">us</a> with your registered email address — we will send your license key.',
     downloadTitle: 'Download',
     downloadNote: 'Install, sign in or register — your 14-day trial starts automatically.',
     periodMonth: '/mo',
@@ -129,7 +129,7 @@ window.MASPLANLOT_I18N = {
     buyPaypal: 'Kupi · PayPal',
     buyYoomoney: 'Kupi · YooMoney',
     payAfterLicense:
-      'Posle uplate pišite na <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20licenca">segalcomminc@gmail.com</a> — poslaćemo ključ.',
+      'Posle uplate pišite <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20licenca">nama</a>, obavezno sa registrovanom e-mail adresom — poslaćemo ključ.',
     downloadTitle: 'Preuzmi',
     downloadNote: 'Instalirajte, prijavite se ili registrujte — probni period od 14 dana počinje automatski.',
     periodMonth: '/mes',

@@ -71,7 +71,6 @@
             ? 'MasPlanLot CRM — licenca'
             : 'MasPlanLot CRM — license';
       a.href = 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
-      a.textContent = email;
     });
   }
 
