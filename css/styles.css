@@ -553,6 +553,134 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.55;
 }
 
+/* Reviews */
+.reviews-grid {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.review-card {
+  padding: 1.5rem 1.65rem;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.review-card__stars {
+  font-size: 0.9375rem;
+  letter-spacing: 0.12em;
+  color: #f5a623;
+  line-height: 1;
+}
+
+.review-card__text {
+  font-size: 0.9875rem;
+  line-height: 1.65;
+  color: var(--ink);
+  flex: 1;
+}
+
+.review-card__author {
+  padding-top: 0.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.review-card__name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.review-card__company {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+
+/* Support form */
+.support-form {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.support-form__fields {
+  display: grid;
+  gap: 1rem;
+}
+
+.support-form__field label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.4rem;
+}
+
+.support-form__field input,
+.support-form__field textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 0.9375rem;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.65);
+  color: var(--ink);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.support-form__field input:focus,
+.support-form__field textarea:focus {
+  outline: none;
+  border-color: rgba(0, 113, 227, 0.45);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.12);
+}
+
+.support-form__field textarea {
+  resize: vertical;
+  min-height: 7.5rem;
+}
+
+.support-form__error {
+  margin-top: 0.85rem;
+  font-size: 0.875rem;
+  color: #b42318;
+  background: rgba(180, 35, 24, 0.06);
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.support-form__success {
+  margin-top: 0.85rem;
+  font-size: 0.875rem;
+  color: #027a48;
+  background: rgba(2, 122, 72, 0.08);
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.support-form .btn {
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+.support-form .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
 /* Footer */
 .footer {
   padding: 2.5rem 0 3rem;
@@ -631,6 +759,17 @@ a { color: inherit; text-decoration: none; }
 @media (min-width: 640px) {
   .feature-grid { grid-template-columns: 1fr 1fr; }
   .benefits { grid-template-columns: 1fr 1fr; }
+  .reviews-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+@media (min-width: 768px) {
+  .support-form__fields {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .support-form__field--full {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (min-width: 960px) {
@@ -655,7 +794,8 @@ a { color: inherit; text-decoration: none; }
   html { scroll-behavior: auto; }
   .btn--primary:hover,
   .feature-card:hover,
-  .dl-card:hover { transform: none; }
+  .dl-card:hover,
+  .review-card:hover { transform: none; }
 
   .hero__slide { transition: none; }
 }

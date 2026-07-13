@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css?v=7">
+  <link rel="stylesheet" href="css/styles.css?v=8">
 </head>
 <body>
 
@@ -22,6 +22,8 @@
       <nav class="nav">
         <a href="#solution" data-i18n="navSolution">Возможности</a>
         <a href="#get" data-i18n="navGet">Тариф</a>
+        <a href="#reviews" data-i18n="navReviews">Отзывы</a>
+        <a href="#support" data-i18n="navSupport">Поддержка</a>
       </nav>
       <div class="header__actions">
         <select id="siteLang" class="lang-select" aria-label="Language">
@@ -41,6 +43,8 @@
       <nav>
         <a href="#solution" data-i18n="navSolution">Возможности</a>
         <a href="#get" data-i18n="navGet">Тариф</a>
+        <a href="#reviews" data-i18n="navReviews">Отзывы</a>
+        <a href="#support" data-i18n="navSupport">Поддержка</a>
       </nav>
       <a href="#get" class="btn btn--primary btn--block" data-i18n="trial">14 дней бесплатно</a>
     </div>
@@ -176,6 +180,71 @@
         </article>
       </div>
     </section>
+
+    <section class="section section--soft" id="reviews">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <h2 class="section__title" data-i18n="reviewsTitle">Отзывы</h2>
+          <p class="section__sub" data-i18n="reviewsSub">Компании, которые уже ведут продажи участков в MasPlanLot CRM</p>
+        </div>
+
+        <ul class="reviews-grid">
+          <li class="review-card glass">
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p class="review-card__text" data-i18n="review1Text">«Наконец видим весь генплан в одном окне: какие лоты свободны, где бронь, кто ведёт клиента. Руководителю не нужно собирать отчёты вручную — всё наглядно.»</p>
+            <div class="review-card__author">
+              <p class="review-card__name" data-i18n="review1Name">Алексей Воронов</p>
+              <p class="review-card__company" data-i18n="review1Company">ГринЛайн Девелопмент</p>
+            </div>
+          </li>
+          <li class="review-card glass">
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p class="review-card__text" data-i18n="review2Text">«Менеджеры перестали терять заявки между чатами и таблицами. Клиент, участок и этап сделки связаны — команда работает синхронно, даже когда кто-то в поле.»</p>
+            <div class="review-card__author">
+              <p class="review-card__name" data-i18n="review2Name">Марина Козлова</p>
+              <p class="review-card__company" data-i18n="review2Company">Земельный Дом</p>
+            </div>
+          </li>
+          <li class="review-card glass">
+            <div class="review-card__stars" aria-hidden="true">★★★★★</div>
+            <p class="review-card__text" data-i18n="review3Text">«Заменили Excel и PDF генплана на одну систему. Витрина посёлка и CRM вместе — покупатели оставляют заявки, а мы сразу видим их в карточке лота. Очень довольны.»</p>
+            <div class="review-card__author">
+              <p class="review-card__name" data-i18n="review3Name">Дмитрий Лебедев</p>
+              <p class="review-card__company" data-i18n="review3Company">Сосновый Берег</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="support">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <h2 class="section__title" data-i18n="supportTitle">Поддержка</h2>
+          <p class="section__sub" data-i18n="supportSub">Вопрос по лицензии, оплате или работе системы — напишите нам, ответим в ближайшее время</p>
+        </div>
+
+        <form class="support-form glass" id="supportForm" novalidate>
+          <div class="support-form__fields">
+            <div class="support-form__field">
+              <label for="supportEmail" data-i18n="supportEmailLabel">E-mail</label>
+              <input type="email" id="supportEmail" name="email" autocomplete="email" required placeholder="you@company.com" data-i18n-placeholder="supportEmailPlaceholder">
+            </div>
+            <div class="support-form__field">
+              <label for="supportSubject" data-i18n="supportSubjectLabel">Тема</label>
+              <input type="text" id="supportSubject" name="subject" required data-i18n-placeholder="supportSubjectPlaceholder">
+            </div>
+            <div class="support-form__field support-form__field--full">
+              <label for="supportMessage" data-i18n="supportMessageLabel">Сообщение</label>
+              <textarea id="supportMessage" name="message" rows="5" required data-i18n-placeholder="supportMessagePlaceholder"></textarea>
+            </div>
+          </div>
+          <p class="support-form__error" id="supportError" hidden></p>
+          <p class="support-form__success" id="supportSuccess" hidden data-i18n="supportSuccess">Сообщение отправлено — мы ответим на указанный e-mail.</p>
+          <button type="submit" class="btn btn--primary" id="supportSubmit" data-i18n="supportSend">Отправить</button>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -185,9 +254,9 @@
     </div>
   </footer>
 
-  <script src="js/i18n.js?v=7"></script>
-  <script src="js/config.js?v=7"></script>
-  <script src="js/releases.js?v=7"></script>
-  <script src="js/main.js?v=7"></script>
+  <script src="js/i18n.js?v=8"></script>
+  <script src="js/config.js?v=8"></script>
+  <script src="js/releases.js?v=8"></script>
+  <script src="js/main.js?v=8"></script>
 </body>
 </html>

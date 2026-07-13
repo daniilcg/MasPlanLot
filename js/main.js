@@ -213,6 +213,128 @@
     start();
   }
 
+  function initSupportForm(getLang) {
+    const form = document.getElementById('supportForm');
+    if (!form) return;
+
+    const emailEl = document.getElementById('supportEmail');
+    const subjectEl = document.getElementById('supportSubject');
+    const messageEl = document.getElementById('supportMessage');
+    const errorEl = document.getElementById('supportError');
+    const successEl = document.getElementById('supportSuccess');
+    const submitBtn = document.getElementById('supportSubmit');
+    const supportTo = (cfg.PAYMENTS || {}).licenseEmail || 'segalcomminc@gmail.com';
+
+    function pack() {
+      const dict = window.MASPLANLOT_I18N || {};
+      return dict[getLang()] || dict.ru || {};
+    }
+
+    function showError(msg) {
+      if (!errorEl) return;
+      errorEl.textContent = msg;
+      errorEl.hidden = false;
+      if (successEl) successEl.hidden = true;
+    }
+
+    function showSuccess() {
+      if (errorEl) errorEl.hidden = true;
+      if (successEl) {
+        successEl.hidden = false;
+        const t = pack();
+        if (t.supportSuccess) successEl.textContent = t.supportSuccess;
+      }
+    }
+
+    function sendViaMailto(data) {
+      const body = 'From: ' + data.email + '\n\n' + data.message;
+      const url =
+        'mailto:' +
+        encodeURIComponent(supportTo) +
+        '?subject=' +
+        encodeURIComponent('[MasPlanLot] ' + data.subject) +
+        '&body=' +
+        encodeURIComponent(body);
+      window.location.href = url;
+      return true;
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const t = pack();
+
+      const email = (emailEl?.value || '').trim();
+      const subject = (subjectEl?.value || '').trim();
+      const message = (messageEl?.value || '').trim();
+
+      if (!email) {
+        showError(t.supportEmailRequired || 'Email required');
+        emailEl?.focus();
+        return;
+      }
+      if (!email.includes('@')) {
+        showError(t.supportEmailInvalid || 'Invalid email');
+        emailEl?.focus();
+        return;
+      }
+      if (!subject) {
+        showError(t.supportSubjectRequired || 'Subject required');
+        subjectEl?.focus();
+        return;
+      }
+      if (!message) {
+        showError(t.supportMessageRequired || 'Message required');
+        messageEl?.focus();
+        return;
+      }
+
+      if (errorEl) errorEl.hidden = true;
+      if (successEl) successEl.hidden = true;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = t.supportSending || 'Sending…';
+      }
+
+      const payload = { email, subject, message };
+      let sent = false;
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/' + encodeURIComponent(supportTo), {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            email,
+            subject: '[MasPlanLot] ' + subject,
+            message,
+            _subject: '[MasPlanLot] ' + subject,
+            _template: 'table',
+            _captcha: 'false',
+          }),
+        });
+        if (res.ok) sent = true;
+      } catch {
+        /* fallback below */
+      }
+
+      if (!sent) sent = sendViaMailto(payload);
+
+      if (sent) {
+        showSuccess();
+        form.reset();
+      } else {
+        showError(t.supportFailed || 'Send failed');
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = t.supportSend || 'Send';
+      }
+    });
+  }
+
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
@@ -225,6 +347,8 @@
     } catch {
       /* ignore */
     }
+
+    const getLang = () => lang;
 
     function apply(l) {
       const pack = dict[l] || dict.ru;
@@ -244,6 +368,11 @@
         if (key && pack[key] != null) el.setAttribute('aria-label', pack[key]);
       });
 
+      document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (key && pack[key] != null) el.setAttribute('placeholder', pack[key]);
+      });
+
       if (pack.metaTitle) document.title = pack.metaTitle;
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc && pack.metaDescription) metaDesc.content = pack.metaDescription;
@@ -254,6 +383,9 @@
       initPricing(l);
       initPayments(l);
       initAppLinks();
+
+      const submitBtn = document.getElementById('supportSubmit');
+      if (submitBtn && pack.supportSend) submitBtn.textContent = pack.supportSend;
     }
 
     apply(lang);
@@ -266,6 +398,8 @@
       }
       apply(lang);
     });
+
+    initSupportForm(getLang);
   }
 
   initAppLinks();
