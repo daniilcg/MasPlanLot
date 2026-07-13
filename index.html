@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MasPlanLot CRM — программа для продажи земельных участков: карта лотов, CRM, витрина посёлка. Windows и macOS. 14 дней бесплатно.">
+  <meta name="description" content="MasPlanLot CRM — система управления продажами земельных участков и коттеджных посёлков. Карта лотов, CRM, витрина. 14 дней бесплатно.">
   <title>MasPlanLot — CRM для продажи участков</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css?v=4">
+  <link rel="stylesheet" href="css/styles.css?v=6">
 </head>
 <body>
 
   <header class="header" id="header">
-    <div class="container header__inner">
+    <div class="header__bar glass">
       <a href="#" class="logo">
-        <img src="assets/icon.svg" alt="" width="32" height="32">
+        <img src="assets/icon.svg" alt="" width="28" height="28">
         <span>MasPlanLot</span>
       </a>
       <nav class="nav">
-        <a href="#uses" data-i18n="navAbout">Что это</a>
+        <a href="#solution" data-i18n="navSolution">Возможности</a>
         <a href="#get" data-i18n="navGet">Тариф</a>
       </nav>
       <div class="header__actions">
@@ -36,10 +36,10 @@
   </header>
 
   <div class="mobile-nav" id="mobileNav" aria-hidden="true">
-    <div class="mobile-nav__panel">
+    <div class="mobile-nav__panel glass">
       <button type="button" id="menuClose" data-i18n-aria="menuClose" aria-label="Закрыть">✕</button>
       <nav>
-        <a href="#uses" data-i18n="navAbout">Что это</a>
+        <a href="#solution" data-i18n="navSolution">Возможности</a>
         <a href="#get" data-i18n="navGet">Тариф</a>
       </nav>
       <a href="#get" class="btn btn--primary btn--block" data-i18n="trial">14 дней бесплатно</a>
@@ -48,98 +48,107 @@
 
   <main>
     <section class="hero">
+      <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__text">
-          <h1 data-i18n-html="heroTitle">Участки на карте.<br>Клиенты в CRM.<br>Продажи под контролем.</h1>
-          <p data-i18n="heroSub">MasPlanLot CRM — desktop-программа для застройщиков и агентств: карта лотов на генплане, CRM, витрина посёлка и выгрузка объявлений. Windows и macOS, облако и офлайн.</p>
+          <p class="hero__eyebrow" data-i18n="heroEyebrow">Для девелоперов и застройщиков</p>
+          <h1 data-i18n-html="heroTitle">Продажи участков<br>под полным контролем</h1>
+          <p data-i18n="heroSub">MasPlanLot CRM объединяет генплан, клиентскую базу и сделки в одной системе. Руководитель видит статус каждого лота и загрузку менеджеров — без Excel, PDF и хаоса в мессенджерах.</p>
           <div class="hero__cta">
-            <a href="#get" class="btn btn--primary" data-i18n="heroCta">Попробовать 14 дней бесплатно</a>
+            <a href="#get" class="btn btn--primary btn--lg" data-i18n="heroCta">Начать бесплатный период</a>
           </div>
         </div>
-        <div class="hero__shot">
+        <div class="hero__shot glass">
           <img id="heroShot" src="assets/img/MasPlanLot_CRM_swKCrYgi2p.png" alt="MasPlanLot CRM — генплан и карта" width="1200" height="750">
         </div>
       </div>
     </section>
 
-    <section class="section section--gray" id="uses">
-      <div class="container uses">
-        <h2 class="section__title" data-i18n="usesTitle">Что такое MasPlanLot CRM</h2>
-        <p class="uses__intro" data-i18n="usesIntro">Программа для продажи земельных участков и посёлков. Каждый лот — на карте: номер, площадь, цена, статус. Клиенты и сделки привязаны к участкам. Вместо Excel, PDF-генпланов и переписки в мессенджерах — одно приложение для всего отдела продаж.</p>
+    <section class="section" id="solution">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <h2 class="section__title" data-i18n="usesTitle">Единая система для отдела продаж</h2>
+          <p class="section__sub" data-i18n="usesIntro">Платформа для компаний, которые продают земельные участки и коттеджные посёлки. Каждый лот на карте — со статусом, ценой и историей работы с клиентом. Команда работает синхронно, данные сохраняются в облаке.</p>
+        </div>
 
-        <p class="uses__label" data-i18n="usesAudienceTitle">Кому подходит</p>
-        <ul class="audience">
-          <li data-i18n="usesAudience1">Застройщики и девелоперы посёлков</li>
-          <li data-i18n="usesAudience2">Агентства земельных участков</li>
-          <li data-i18n="usesAudience3">Отделы продаж загородной недвижимости</li>
+        <ul class="pill-row">
+          <li class="pill glass" data-i18n="usesAudience1">Девелоперы посёлков</li>
+          <li class="pill glass" data-i18n="usesAudience2">Земельные холдинги</li>
+          <li class="pill glass" data-i18n="usesAudience3">Отделы продаж загородной недвижимости</li>
         </ul>
 
-        <p class="uses__label" data-i18n="usesTasksTitle">Что входит в подписку</p>
-        <ul class="tasks">
-          <li data-i18n-html="usesTask1"><strong>Карта участков</strong> — свободен, бронь, продан: номер, площадь, цена на генплане</li>
-          <li data-i18n-html="usesTask2"><strong>CRM продаж</strong> — клиенты, сделки, звонки, счета, задачи и напоминания в Telegram</li>
-          <li data-i18n-html="usesTask3"><strong>Подбор под клиента</strong> — автоматический скоринг участков по бюджету и площади</li>
-          <li data-i18n-html="usesTask4"><strong>Публичная витрина</strong> — ссылка на посёлок, заявки с сайта сразу в CRM</li>
-          <li data-i18n-html="usesTask5"><strong>Объявления</strong> — выгрузка лотов на Avito и другие площадки одним файлом</li>
-          <li data-i18n-html="usesTask6"><strong>Команда</strong> — роли владелец, менеджер, просмотр; импорт из Excel и 1С</li>
+        <ul class="feature-grid">
+          <li class="feature-card glass" data-i18n-html="usesTask1"><strong>Карта лотов</strong><span>Свободен, бронь, продан — номер, площадь и цена на генплане</span></li>
+          <li class="feature-card glass" data-i18n-html="usesTask2"><strong>CRM и сделки</strong><span>Клиенты, звонки, счета, задачи и контроль менеджеров</span></li>
+          <li class="feature-card glass" data-i18n-html="usesTask3"><strong>Подбор участков</strong><span>Автоматический отбор лотов под бюджет и площадь клиента</span></li>
+          <li class="feature-card glass" data-i18n-html="usesTask4"><strong>Витрина посёлка</strong><span>Презентация проекта покупателям, заявки сразу в систему</span></li>
+          <li class="feature-card glass" data-i18n-html="usesTask5"><strong>Публикация объявлений</strong><span>Выгрузка лотов на Avito и другие площадки одним файлом</span></li>
+          <li class="feature-card glass" data-i18n-html="usesTask6"><strong>Команда и учёт</strong><span>Роли доступа, импорт из Excel и 1С, без ограничения проектов</span></li>
         </ul>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section--soft">
       <div class="container">
-        <h2 class="section__title" data-i18n="whyTitle">Почему MasPlanLot</h2>
-        <ul class="why">
-          <li data-i18n-html="why1"><strong>Всё на одном экране</strong> — участок, клиент и статус сделки связаны с картой</li>
-          <li data-i18n-html="why2"><strong>Сделано для земли</strong> — генплан, кадастр, лоты, не абстрактная «воронка»</li>
-          <li data-i18n-html="why3"><strong>Для отдела продаж</strong> — карта, CRM, задачи и витрина без лишних инструментов</li>
-          <li data-i18n-html="why4"><strong>Windows + macOS + облако</strong> — desktop-приложение, данные синхронизируются</li>
+        <h2 class="section__title section__title--center" data-i18n="whyTitle">Преимущества для бизнеса</h2>
+        <ul class="benefits">
+          <li class="benefit glass" data-i18n-html="why1"><strong>Прозрачность продаж</strong><span>Участок, клиент и этап сделки связаны — руководитель видит картину целиком</span></li>
+          <li class="benefit glass" data-i18n-html="why2"><strong>Специализация на земле</strong><span>Генплан, кадастр, лоты — не универсальная CRM «для всего»</span></li>
+          <li class="benefit glass" data-i18n-html="why3"><strong>Меньше потерь</strong><span>Менеджеры не теряют лоты и клиентов между таблицами и чатами</span></li>
+          <li class="benefit glass" data-i18n-html="why4"><strong>Надёжная работа</strong><span>Windows и macOS, облачная синхронизация, офлайн-доступ</span></li>
         </ul>
       </div>
     </section>
 
-    <section class="section section--gray" id="get">
+    <section class="section" id="get">
       <div class="container">
-        <h2 class="section__title section__title--center" data-i18n="getTitle">Тариф и начало работы</h2>
-        <p class="section__sub section__sub--center" data-i18n="getSub">14 дней бесплатно · одна подписка на всё · без лимита проектов</p>
+        <div class="section__head section__head--center">
+          <h2 class="section__title" data-i18n="getTitle">Тариф</h2>
+          <p class="section__sub" data-i18n="getSub">14 дней бесплатно · полный доступ · без лимита проектов и пользователей</p>
+        </div>
 
-        <article class="box box--crm box--solo">
-          <div class="box__head">
-            <img src="assets/icon.svg" alt="" width="40" height="40">
-            <div>
-              <h3>MasPlanLot CRM</h3>
-              <p class="box__price" data-price="crm-month">7 900 ₽/мес</p>
-              <p class="box__year" data-price="crm-year">79 000 ₽/год</p>
+        <article class="pricing-card glass">
+          <div class="pricing-card__head">
+            <div class="pricing-card__brand">
+              <img src="assets/icon.svg" alt="" width="44" height="44">
+              <div>
+                <h3>MasPlanLot CRM</h3>
+                <p class="pricing-card__badge" data-i18n="getTrialBadge">14 дней бесплатно</p>
+              </div>
+            </div>
+            <div class="pricing-card__price">
+              <p class="pricing-card__amount" data-price="crm-month">7 900 ₽/мес</p>
+              <p class="pricing-card__year" data-price="crm-year">79 000 ₽/год</p>
             </div>
           </div>
 
-          <p class="box__lead" data-i18n="getLead">Полный доступ ко всем функциям. Оплатите подписку или начните с триала — скачайте ниже.</p>
+          <p class="pricing-card__lead" data-i18n="getLead">Одна подписка открывает все функции. Оплатите онлайн или начните с пробного периода.</p>
 
-          <div class="box__pay">
-            <p class="box__pay-label" data-i18n="getPayLabel">Оплата</p>
+          <div class="pricing-card__block">
+            <p class="pricing-card__label" data-i18n="getPayLabel">Оплата подписки</p>
             <div class="pay-buttons pay-buttons--row">
-              <a href="#" id="buyPaypal" class="btn btn--paypal" target="_blank" rel="noopener noreferrer" data-i18n="buyPaypal">Купить · PayPal</a>
-              <a href="#" id="buyYoomoney" class="btn btn--yoomoney" target="_blank" rel="noopener noreferrer" data-i18n="buyYoomoney">Купить · ЮMoney</a>
+              <a href="#" id="buyPaypal" class="btn btn--paypal" target="_blank" rel="noopener noreferrer" data-i18n="buyPaypal">PayPal</a>
+              <a href="#" id="buyYoomoney" class="btn btn--yoomoney" target="_blank" rel="noopener noreferrer" data-i18n="buyYoomoney">ЮMoney</a>
             </div>
             <p class="pay-after" data-i18n-html="payAfterLicense"></p>
           </div>
 
-          <div class="box__download">
-            <p class="box__download-label">
+          <div class="pricing-card__block">
+            <p class="pricing-card__label">
               <span data-i18n="downloadTitle">Скачать</span>
               <span class="version-tag" data-version>v0.5.0</span>
             </p>
             <div class="download-row">
-              <a href="#" class="dl-card" id="crmWin">
+              <a href="#" class="dl-card glass" id="crmWin">
                 <span class="dl-card__os">Windows</span>
                 <span class="dl-card__file">Setup .exe</span>
               </a>
-              <a href="#" class="dl-card" id="crmMac">
+              <a href="#" class="dl-card glass" id="crmMac">
                 <span class="dl-card__os">macOS</span>
                 <span class="dl-card__file">.dmg</span>
               </a>
             </div>
-            <p class="box__note" data-i18n="downloadNote">Установите, войдите или зарегистрируйтесь — триал 14 дней начнётся автоматически.</p>
+            <p class="pricing-card__note" data-i18n="downloadNote">Установите приложение и войдите в аккаунт — пробный период начнётся автоматически.</p>
           </div>
         </article>
       </div>
@@ -153,9 +162,9 @@
     </div>
   </footer>
 
-  <script src="js/i18n.js?v=5"></script>
-  <script src="js/config.js?v=5"></script>
-  <script src="js/releases.js?v=5"></script>
-  <script src="js/main.js?v=5"></script>
+  <script src="js/i18n.js?v=6"></script>
+  <script src="js/config.js?v=6"></script>
+  <script src="js/releases.js?v=6"></script>
+  <script src="js/main.js?v=6"></script>
 </body>
 </html>

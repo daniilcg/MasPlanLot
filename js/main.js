@@ -46,6 +46,8 @@
         if (val == null) return;
         if (el.classList.contains('plan__price')) {
           el.innerHTML = fmtMoney(val, lang) + '<small>' + suffix + '</small>';
+        } else if (el.classList.contains('pricing-card__amount')) {
+          el.textContent = fmtMoney(val, lang) + suffix;
         } else {
           el.textContent = fmtMoney(val, lang) + suffix;
         }
