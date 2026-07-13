@@ -25,6 +25,38 @@
     return p[period + cur];
   }
 
+  function paypalAmountForLang(lang, period) {
+    const amount = priceValue('crm', period, lang === 'sr' ? 'en' : lang);
+    return amount == null ? null : amount;
+  }
+
+  function buildPaypalUrl(base, lang, period) {
+    if (!base) return '#';
+    const clean = base.replace(/\/$/, '');
+    if (lang === 'ru') return clean;
+    const amount = paypalAmountForLang(lang, period);
+    if (amount == null) return clean;
+    return clean + '/' + amount + 'USD';
+  }
+
+  let billingPeriod = 'month';
+
+  function loadBillingPeriod() {
+    try {
+      billingPeriod = localStorage.getItem('billing_period') === 'year' ? 'year' : 'month';
+    } catch {
+      billingPeriod = 'month';
+    }
+  }
+
+  function saveBillingPeriod() {
+    try {
+      localStorage.setItem('billing_period', billingPeriod);
+    } catch {
+      /* ignore */
+    }
+  }
+
   function initAppLinks() {
     document.querySelectorAll('[data-app-link]').forEach((el) => {
       el.href = APP + el.getAttribute('data-app-link');
@@ -35,22 +67,46 @@
     const pack = (window.MASPLANLOT_I18N || {})[lang] || {};
     const monthSuffix = pack.periodMonth || '/мес';
     const yearSuffix = pack.periodYear || '/год';
+    const useBillingToggle = lang === 'en' || lang === 'sr';
+    const priceBox = document.querySelector('.pricing-card__price');
+    const billingToggle = document.getElementById('billingToggle');
+    const monthEl = document.querySelector('[data-price="crm-month"]');
+    const yearEl = document.querySelector('[data-price="crm-year"]');
 
-    const map = [
-      ['crm-month', 'crm', 'month', monthSuffix],
-      ['crm-year', 'crm', 'year', yearSuffix],
-    ];
-    map.forEach(([key, product, period, suffix]) => {
-      const val = priceValue(product, period, lang);
-      document.querySelectorAll('[data-price="' + key + '"]').forEach((el) => {
-        if (val == null) return;
-        if (el.classList.contains('plan__price')) {
-          el.innerHTML = fmtMoney(val, lang) + '<small>' + suffix + '</small>';
-        } else if (el.classList.contains('pricing-card__amount')) {
-          el.textContent = fmtMoney(val, lang) + suffix;
-        } else {
-          el.textContent = fmtMoney(val, lang) + suffix;
-        }
+    if (billingToggle) billingToggle.hidden = !useBillingToggle;
+    if (priceBox) priceBox.classList.toggle('pricing-card__price--toggle', useBillingToggle);
+
+    billingToggle?.querySelectorAll('.billing-toggle__btn').forEach((btn) => {
+      btn.classList.toggle('is-active', btn.getAttribute('data-period') === billingPeriod);
+    });
+
+    const monthVal = priceValue('crm', 'month', lang);
+    const yearVal = priceValue('crm', 'year', lang);
+
+    if (useBillingToggle) {
+      const activeVal = billingPeriod === 'year' ? yearVal : monthVal;
+      const activeSuffix = billingPeriod === 'year' ? yearSuffix : monthSuffix;
+      if (monthEl && activeVal != null) {
+        monthEl.textContent = fmtMoney(activeVal, lang) + activeSuffix;
+      }
+    } else {
+      if (monthEl && monthVal != null) monthEl.textContent = fmtMoney(monthVal, lang) + monthSuffix;
+      if (yearEl && yearVal != null) yearEl.textContent = fmtMoney(yearVal, lang) + yearSuffix;
+    }
+  }
+
+  function initBillingToggle(getLang) {
+    const billingToggle = document.getElementById('billingToggle');
+    if (!billingToggle) return;
+
+    billingToggle.querySelectorAll('.billing-toggle__btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const lang = getLang();
+        if (lang !== 'en' && lang !== 'sr') return;
+        billingPeriod = btn.getAttribute('data-period') === 'year' ? 'year' : 'month';
+        saveBillingPeriod();
+        initPricing(lang);
+        initPayments(lang);
       });
     });
   }
@@ -65,7 +121,9 @@
     const tbankUrl = pay.tbank || '';
     const showRu = lang === 'ru' && !!tbankUrl;
 
-    if (paypal && pay.paypal) paypal.href = pay.paypal;
+    if (paypal && pay.paypal) {
+      paypal.href = buildPaypalUrl(pay.paypal, lang, billingPeriod);
+    }
     if (tbank && tbankUrl) tbank.href = tbankUrl;
     if (tbankLink && tbankUrl) tbankLink.href = tbankUrl;
     if (tbankCol) tbankCol.hidden = !showRu;
@@ -378,6 +436,19 @@
         if (key && pack[key] != null) el.setAttribute('placeholder', pack[key]);
       });
 
+      document.querySelectorAll('.billing-toggle__btn[data-i18n]').forEach((el) => {
+        const key = el.getAttribute('data-i18n');
+        if (key && pack[key] != null) el.textContent = pack[key];
+      });
+
+      const billingToggle = document.getElementById('billingToggle');
+      if (billingToggle && pack.billingMonth && pack.billingYear) {
+        billingToggle.setAttribute(
+          'aria-label',
+          l === 'sr' ? 'Period naplate' : l === 'en' ? 'Billing period' : 'Период оплаты'
+        );
+      }
+
       if (pack.metaTitle) document.title = pack.metaTitle;
       const metaDesc = document.querySelector('meta[name="description"]');
       if (metaDesc && pack.metaDescription) metaDesc.content = pack.metaDescription;
@@ -405,8 +476,10 @@
     });
 
     initSupportForm(getLang);
+    initBillingToggle(getLang);
   }
 
+  loadBillingPeriod();
   initAppLinks();
   void initDownloadsFromGitHub();
   initMobileNav();

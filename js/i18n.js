@@ -63,6 +63,8 @@ window.MASPLANLOT_I18N = {
     downloadNote: 'Установите приложение и войдите в аккаунт — пробный период начнётся автоматически.',
     periodMonth: '/мес',
     periodYear: '/год',
+    billingMonth: 'Месяц',
+    billingYear: 'Год',
     reviewsTitle: 'Отзывы',
     reviewsSub: 'Компании, которые уже ведут продажи участков в MasPlanLot CRM',
     review1Text:
@@ -157,6 +159,8 @@ window.MASPLANLOT_I18N = {
     downloadNote: 'Install the app and sign in — your trial starts automatically.',
     periodMonth: '/mo',
     periodYear: '/yr',
+    billingMonth: 'Monthly',
+    billingYear: 'Annual',
     reviewsTitle: 'Reviews',
     reviewsSub: 'Companies already selling land lots with MasPlanLot CRM',
     review1Text:
@@ -251,6 +255,8 @@ window.MASPLANLOT_I18N = {
     downloadNote: 'Instalirajte aplikaciju i prijavite se — probni period počinje automatski.',
     periodMonth: '/mes',
     periodYear: '/god',
+    billingMonth: 'Mesečno',
+    billingYear: 'Godišnje',
     reviewsTitle: 'Utisci',
     reviewsSub: 'Kompanije koje već vode prodaju parcela u MasPlanLot CRM',
     review1Text:
