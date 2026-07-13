@@ -230,10 +230,7 @@
       (cfg.RELEASES?.repo || 'MasPlanLot') +
       '/releases/latest';
 
-    const map = [
-      ['crmWin', crm?.win || fallback.win],
-      ['crmMac', crm?.mac || fallback.mac],
-    ];
+    const map = [['crmWin', crm?.win || fallback.win]];
 
     map.forEach(([id, href]) => {
       const el = document.getElementById(id);
@@ -271,7 +268,6 @@
       const latest = await window.fetchMasPlanLotReleaseDownloads();
       applyDownloadLinks({
         win: latest.crm?.win || D.crm?.win,
-        mac: latest.crm?.mac || null,
       });
       if (latest.version) {
         document.querySelectorAll('[data-version]').forEach((el) => {

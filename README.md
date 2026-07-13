@@ -1,6 +1,6 @@
 # MasPlanLot — маркетинговый сайт
 
-Отдельный статический лендинг. **Не связан** с CRM/CAD приложением (Next.js).
+Отдельный статический лендинг. **Не связан** с CRM-приложением (Next.js).
 
 ## Запуск локально
 
@@ -22,10 +22,9 @@ site/
 
 ## Настройка
 
-В `js/main.js`:
-
-- `APP_URL` — адрес CRM-приложения (`http://localhost:3000` или продакшен)
-- `CRM_DOWNLOAD` / `CAD_DOWNLOAD` — ссылки на .exe
+- `js/config.js` — генерируется: `node scripts/sync-marketing-config.js`
+- `APP_URL` в config — адрес CRM-приложения
+- Ссылки на CRM .exe / .dmg — в `DOWNLOADS.crm`
 
 ## Деплой
 
