@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css?v=11">
+  <link rel="stylesheet" href="css/styles.css?v=12">
 </head>
 <body>
 
@@ -154,8 +154,11 @@
           <div class="pricing-card__block">
             <p class="pricing-card__label" data-i18n="getPayLabel">Оплата подписки</p>
             <div class="pay-buttons pay-buttons--row">
-              <button type="button" class="btn btn--paypal" id="togglePaypalQr" data-i18n="buyPaypal" aria-expanded="false" aria-controls="payPaypalPanel">PayPal</button>
+              <a href="#" id="buyPaypal" class="btn btn--paypal" target="_blank" rel="noopener noreferrer" data-i18n="buyPaypal">PayPal</a>
               <a href="#" id="buyTbank" class="btn btn--tbank" target="_blank" rel="noopener noreferrer" data-i18n="buyTbank">Картой · СБП</a>
+            </div>
+            <div class="pay-qr-actions" id="payPaypalQrAction">
+              <button type="button" class="btn btn--ghost btn--block" id="togglePaypalQr" data-i18n="payPaypalQr" aria-expanded="false" aria-controls="payPaypalPanel">PayPal · QR</button>
             </div>
             <div class="pay-qr-actions" id="payTbankQrAction" hidden>
               <button type="button" class="btn btn--ghost btn--block" id="toggleTbankQr" data-i18n="payByQr" aria-expanded="false" aria-controls="payTbankPanel">Оплатить по QR</button>
@@ -281,9 +284,9 @@
     </div>
   </footer>
 
-  <script src="js/i18n.js?v=11"></script>
-  <script src="js/config.js?v=11"></script>
-  <script src="js/releases.js?v=11"></script>
-  <script src="js/main.js?v=11"></script>
+  <script src="js/i18n.js?v=12"></script>
+  <script src="js/config.js?v=12"></script>
+  <script src="js/releases.js?v=12"></script>
+  <script src="js/main.js?v=12"></script>
 </body>
 </html>

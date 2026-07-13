@@ -24,7 +24,7 @@ window.MASPLANLOT_CONFIG = {
     },
   },
   PAYMENTS: {
-    paypal: 'https://paypal.me/segalcomminc',
+    paypal: 'https://paypal.me/segalcommic',
     tbank: 'https://www.tinkoff.ru/rm/r_uOxAaxnHwq.CXHZxuQEwL/QUqrE63433',
     licenseEmail: 'segalcomminc@gmail.com',
   },

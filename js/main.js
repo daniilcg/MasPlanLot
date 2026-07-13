@@ -57,12 +57,14 @@
 
   function initPayments(lang) {
     const pay = cfg.PAYMENTS || {};
+    const paypal = document.getElementById('buyPaypal');
     const tbank = document.getElementById('buyTbank');
     const tbankLink = document.getElementById('payTbankLink');
     const tbankQrAction = document.getElementById('payTbankQrAction');
     const tbankUrl = pay.tbank || '';
     const showRu = lang === 'ru' && !!tbankUrl;
 
+    if (paypal && pay.paypal) paypal.href = pay.paypal;
     if (tbank) {
       tbank.hidden = !showRu;
       if (tbankUrl) tbank.href = tbankUrl;

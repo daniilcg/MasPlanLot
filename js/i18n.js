@@ -51,6 +51,7 @@ window.MASPLANLOT_I18N = {
     buyPaypal: 'PayPal',
     buyTbank: 'Картой · СБП',
     payByQr: 'Оплатить по QR',
+    payPaypalQr: 'PayPal · QR',
     payPaypalHint:
       'Отсканируйте QR в приложении PayPal. В комментарии к переводу обязательно укажите e-mail, зарегистрированный в MasPlanLot CRM.',
     payTbankHint:
@@ -144,6 +145,7 @@ window.MASPLANLOT_I18N = {
     buyPaypal: 'PayPal',
     buyTbank: 'Card · SBP',
     payByQr: 'Pay by QR',
+    payPaypalQr: 'PayPal · QR',
     payPaypalHint:
       'Scan the QR in the PayPal app. In the payment note, include the email registered in MasPlanLot CRM.',
     payTbankHint:
@@ -237,6 +239,7 @@ window.MASPLANLOT_I18N = {
     buyPaypal: 'PayPal',
     buyTbank: 'Kartica · SBP',
     payByQr: 'Plati QR kodom',
+    payPaypalQr: 'PayPal · QR',
     payPaypalHint:
       'Skenirajte QR u PayPal aplikaciji. U komentaru obavezno navedite e-mail registrovan u MasPlanLot CRM.',
     payTbankHint:
