@@ -49,7 +49,10 @@ window.MASPLANLOT_I18N = {
     getLead: 'Одна подписка открывает все функции. Оплатите онлайн или начните с пробного периода.',
     getPayLabel: 'Оплата подписки',
     buyPaypal: 'PayPal',
-    buyYoomoney: 'ЮMoney',
+    buyTbank: 'Картой · СБП',
+    payTbankHint:
+      'Укажите сумму 7 900 ₽ (месяц) или 79 000 ₽ (год). В поле «Сообщение» можно написать ваш e-mail.',
+    payTbankQr: 'QR для оплаты с телефона',
     payAfterLicense:
       'После оплаты напишите <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F">нам</a>, обязательно указав свой зарегистрированный e-mail — пришлём ключ.',
     downloadTitle: 'Скачать',
@@ -136,7 +139,10 @@ window.MASPLANLOT_I18N = {
     getLead: 'One subscription unlocks all features. Pay online or start with a trial.',
     getPayLabel: 'Subscribe',
     buyPaypal: 'PayPal',
-    buyYoomoney: 'YooMoney',
+    buyTbank: 'Card · SBP',
+    payTbankHint:
+      'Enter 7,900 ₽ (month) or 79,000 ₽ (year). You can add your email in the message field.',
+    payTbankQr: 'QR code for mobile payment',
     payAfterLicense:
       'After payment email <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20license">us</a> with your registered email address — we will send your license key.',
     downloadTitle: 'Download',

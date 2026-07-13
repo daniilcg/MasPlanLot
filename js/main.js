@@ -58,12 +58,18 @@
   function initPayments(lang) {
     const pay = cfg.PAYMENTS || {};
     const paypal = document.getElementById('buyPaypal');
-    const yoomoney = document.getElementById('buyYoomoney');
+    const tbank = document.getElementById('buyTbank');
+    const tbankBlock = document.getElementById('payTbankBlock');
+    const tbankQrLink = document.getElementById('payTbankQrLink');
+    const tbankUrl = pay.tbank || '';
     if (paypal && pay.paypal) paypal.href = pay.paypal;
-    if (yoomoney) {
-      yoomoney.hidden = lang !== 'ru';
-      if (pay.yoomoney) yoomoney.href = pay.yoomoney;
+    if (tbank) {
+      const showRu = lang === 'ru' && !!tbankUrl;
+      tbank.hidden = !showRu;
+      if (tbankUrl) tbank.href = tbankUrl;
     }
+    if (tbankBlock) tbankBlock.hidden = lang !== 'ru' || !tbankUrl;
+    if (tbankQrLink && tbankUrl) tbankQrLink.href = tbankUrl;
     const email = pay.licenseEmail || 'segalcomminc@gmail.com';
     document.querySelectorAll('.pay-after a[href^="mailto:"]').forEach((a) => {
       const subject =

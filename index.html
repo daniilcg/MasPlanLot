@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css?v=9">
+  <link rel="stylesheet" href="css/styles.css?v=10">
 </head>
 <body>
 
@@ -155,7 +155,14 @@
             <p class="pricing-card__label" data-i18n="getPayLabel">Оплата подписки</p>
             <div class="pay-buttons pay-buttons--row">
               <a href="#" id="buyPaypal" class="btn btn--paypal" target="_blank" rel="noopener noreferrer" data-i18n="buyPaypal">PayPal</a>
-              <a href="#" id="buyYoomoney" class="btn btn--yoomoney" target="_blank" rel="noopener noreferrer" data-i18n="buyYoomoney">ЮMoney</a>
+              <a href="#" id="buyTbank" class="btn btn--tbank" target="_blank" rel="noopener noreferrer" data-i18n="buyTbank">Картой · СБП</a>
+            </div>
+            <div class="pay-tbank" id="payTbankBlock" hidden>
+              <p class="pay-tbank__hint" data-i18n="payTbankHint">Укажите сумму 7 900 ₽ (месяц) или 79 000 ₽ (год). В поле «Сообщение» можно написать ваш e-mail.</p>
+              <a href="#" id="payTbankQrLink" class="pay-tbank__qr glass" target="_blank" rel="noopener noreferrer">
+                <img src="assets/img/pay-tbank-qr.png" alt="" width="132" height="132" loading="lazy">
+                <span data-i18n="payTbankQr">QR для оплаты с телефона</span>
+              </a>
             </div>
             <p class="pay-after" data-i18n-html="payAfterLicense"></p>
           </div>
@@ -265,9 +272,9 @@
     </div>
   </footer>
 
-  <script src="js/i18n.js?v=9"></script>
-  <script src="js/config.js?v=9"></script>
-  <script src="js/releases.js?v=9"></script>
-  <script src="js/main.js?v=9"></script>
+  <script src="js/i18n.js?v=10"></script>
+  <script src="js/config.js?v=10"></script>
+  <script src="js/releases.js?v=10"></script>
+  <script src="js/main.js?v=10"></script>
 </body>
 </html>
