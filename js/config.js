@@ -25,7 +25,7 @@ window.MASPLANLOT_CONFIG = {
   },
   PAYMENTS: {
     paypal: 'https://paypal.me/segalcomminc',
-    yoomoney: 'https://yoomoney.ru/to/410011855555555',
+    yoomoney: 'https://yoomoney.ru/to/4100119573592841',
     licenseEmail: 'segalcomminc@gmail.com',
   },
 };
