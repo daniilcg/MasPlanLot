@@ -110,9 +110,6 @@ a { color: inherit; text-decoration: none; }
 .btn--primary { background: var(--blue); color: var(--white); }
 .btn--primary:hover { background: var(--blue-dark); }
 
-.btn--cad { background: var(--orange); color: var(--white); }
-.btn--cad:hover { background: #c2410c; }
-
 .btn--ghost { background: transparent; color: var(--muted); }
 .btn--ghost:hover { color: var(--ink); }
 
@@ -182,7 +179,22 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 2rem;
 }
 
-/* Product split */
+/* Product */
+.box--solo {
+  max-width: 36rem;
+  margin: 2rem auto 0;
+}
+
+.pricing--solo {
+  max-width: 24rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.download__grid--solo {
+  max-width: 22rem;
+}
+
 .split {
   display: grid;
   gap: 1.25rem;
@@ -231,7 +243,6 @@ a { color: inherit; text-decoration: none; }
 .box__list li { padding: 0.2rem 0; }
 
 .box--crm { border-top: 3px solid var(--blue); }
-.box--cad { border-top: 3px solid var(--orange); }
 
 /* Why */
 .why {

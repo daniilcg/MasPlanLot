@@ -1,18 +1,16 @@
-/** Fetch latest GitHub Release assets for MasPlanLot public repo. */
+/** Fetch latest GitHub Release assets for MasPlanLot public repo (CRM only). */
 (function () {
   function normalizeTag(tag) {
     return String(tag || '').replace(/^v/i, '');
   }
 
   function matchAssets(assets) {
-    const links = { crm: { win: null, mac: null }, cad: { win: null, mac: null } };
+    const links = { crm: { win: null, mac: null } };
     for (const asset of assets || []) {
       const name = asset.name || '';
       const url = asset.browser_download_url;
       if (!links.crm.win && /MasPlanLot\.?CRM.*Setup.*\.exe$/i.test(name)) links.crm.win = url;
       if (!links.crm.mac && /MasPlanLot\.?CRM.*mac\.dmg$/i.test(name)) links.crm.mac = url;
-      if (!links.cad.win && /MasPlanLot\.?CAD.*Setup.*\.exe$/i.test(name)) links.cad.win = url;
-      if (!links.cad.mac && /MasPlanLot\.?CAD.*mac\.dmg$/i.test(name)) links.cad.mac = url;
     }
     return links;
   }
@@ -34,7 +32,6 @@
       version: normalizeTag(data.tag_name),
       tag: data.tag_name,
       crm: links.crm,
-      cad: links.cad,
     };
   };
 })();

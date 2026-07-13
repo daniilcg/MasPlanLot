@@ -39,10 +39,6 @@
     const map = [
       ['crm-month', 'crm', 'month', monthSuffix],
       ['crm-year', 'crm', 'year', yearSuffix],
-      ['cad-month', 'cad', 'month', monthSuffix],
-      ['cad-year', 'cad', 'year', yearSuffix],
-      ['bundle-month', 'bundle', 'month', monthSuffix],
-      ['bundle-year', 'bundle', 'year', yearSuffix],
     ];
     map.forEach(([key, product, period, suffix]) => {
       const val = priceValue(product, period, lang);
@@ -60,27 +56,16 @@
     if (usd && P.crm) {
       const prefix = pack.pricingUsdPrefix || 'USD помесячно:';
       const yearLabel = pack.pricingUsdYear || 'за год:';
-      const m = (product) => fmtMoney(priceValue(product, 'month', lang), lang);
-      const y = (product) => fmtMoney(priceValue(product, 'year', lang), lang);
-      usd.textContent =
-        prefix +
-        ' ' + m('crm') +
-        ' · ' + m('cad') +
-        ' · ' + m('bundle') +
-        ' · ' + yearLabel +
-        ' ' + y('crm') +
-        ' · ' + y('cad') +
-        ' · ' + y('bundle');
+      const m = fmtMoney(priceValue('crm', 'month', lang), lang);
+      const y = fmtMoney(priceValue('crm', 'year', lang), lang);
+      usd.textContent = prefix + ' ' + m + ' · ' + yearLabel + ' ' + y;
     }
   }
 
-  function applyDownloadLinks(crm, cad) {
+  function applyDownloadLinks(crm) {
     const map = [
       ['crmWin', crm?.win],
       ['crmMac', crm?.mac],
-      ['cadWin', cad?.win],
-      ['cadMac', cad?.mac],
-      // Hero CTAs point to the CRM installer for the chosen platform.
       ['heroWin', crm?.win],
       ['heroMac', crm?.mac],
     ];
@@ -91,7 +76,7 @@
   }
 
   function initDownloads() {
-    applyDownloadLinks(D.crm, D.cad);
+    applyDownloadLinks(D.crm);
     document.querySelectorAll('[data-version]').forEach((el) => {
       el.textContent = 'v' + V;
     });
@@ -105,7 +90,7 @@
 
     try {
       const latest = await window.fetchMasPlanLotReleaseDownloads();
-      applyDownloadLinks(latest.crm, latest.cad);
+      applyDownloadLinks(latest.crm);
       if (latest.version) {
         document.querySelectorAll('[data-version]').forEach((el) => {
           el.textContent = 'v' + latest.version;

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MasPlanLot — CRM и CAD для продажи и проектирования земельных участков. Windows и macOS. 14 дней бесплатно.">
-  <title>MasPlanLot — CRM и CAD для участков</title>
+  <meta name="description" content="MasPlanLot CRM — карта лотов, клиенты, сделки и витрина для застройщиков посёлков. Windows и macOS. 14 дней бесплатно.">
+  <title>MasPlanLot — CRM для продажи участков</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -17,7 +17,6 @@
     <div class="container header__inner">
       <a href="#" class="logo">
         <img src="assets/icon.svg" alt="" width="32" height="32">
-        <img src="assets/icon-cad.svg" alt="" width="32" height="32">
         <span>MasPlanLot</span>
       </a>
       <nav class="nav">
@@ -55,8 +54,8 @@
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__text">
-          <h1 data-i18n-html="heroTitle">Участки на карте.<br>Клиенты в CRM.<br>Генплан в CAD.</h1>
-          <p data-i18n="heroSub">Два приложения для Windows и macOS: продажи посёлков и чертёж генплана. Один аккаунт, облако, офлайн.</p>
+          <h1 data-i18n-html="heroTitle">Участки на карте.<br>Клиенты в CRM.<br>Продажи под контролем.</h1>
+          <p data-i18n="heroSub">Desktop-приложение для Windows и macOS: генплан, карта лотов, CRM, витрина и выгрузка объявлений. Облако и офлайн.</p>
           <div class="hero__cta">
             <a href="#download" id="heroWin" class="btn btn--primary" data-i18n="heroCtaWin">Скачать для Windows</a>
             <a href="#download" id="heroMac" class="btn btn--outline" data-i18n="heroCtaMac">Скачать для macOS</a>
@@ -71,13 +70,13 @@
     <section class="section section--gray" id="uses">
       <div class="container uses">
         <h2 class="section__title" data-i18n="usesTitle">Для кого и какие задачи</h2>
-        <p class="uses__intro" data-i18n="usesIntro">MasPlanLot — платформа для продажи и проектирования земельных участков. Обводите лоты на генплане или карте, ведите клиентов и сделки, показывайте посёлок покупателям и выгружайте объявления на доски.</p>
+        <p class="uses__intro" data-i18n="usesIntro">MasPlanLot CRM — платформа для продажи земельных участков и посёлков. Обводите лоты на генплане или карте, ведите клиентов и сделки, показывайте посёлок покупателям и выгружайте объявления на доски.</p>
 
         <p class="uses__label" data-i18n="usesAudienceTitle">Кому подходит</p>
         <ul class="audience">
           <li data-i18n="usesAudience1">Застройщики и девелоперы посёлков</li>
           <li data-i18n="usesAudience2">Агентства земельных участков</li>
-          <li data-i18n="usesAudience3">Генпланисты и проектные бюро</li>
+          <li data-i18n="usesAudience3">Отделы продаж загородной недвижимости</li>
         </ul>
 
         <p class="uses__label" data-i18n="usesTasksTitle">Что закрывает из коробки</p>
@@ -87,53 +86,33 @@
           <li data-i18n-html="usesTask3"><strong>Подбор под клиента</strong> — автоматический скоринг участков по бюджету и площади</li>
           <li data-i18n-html="usesTask4"><strong>Публичная витрина</strong> — ссылка на посёлок, заявки с сайта сразу в CRM</li>
           <li data-i18n-html="usesTask5"><strong>Объявления</strong> — выгрузка лотов на Avito и другие площадки одним файлом</li>
-          <li data-i18n-html="usesTask6"><strong>Генплан в CAD</strong> — чертёж, DWG/DXF, печать A3/A4 для согласований и презентаций</li>
+          <li data-i18n-html="usesTask6"><strong>Команда</strong> — роли владелец, менеджер, просмотр; импорт из Excel и 1С</li>
         </ul>
       </div>
     </section>
 
     <section class="section" id="product">
       <div class="container">
-        <h2 class="section__title" data-i18n="sectionTwoProducts">Два продукта</h2>
-        <div class="split">
-          <article class="box box--crm">
-            <div class="box__head">
-              <img src="assets/icon.svg" alt="" width="40" height="40">
-              <div>
-                <h3>MasPlanLot CRM</h3>
-                <p class="box__price" data-price="crm-month">7 900 ₽/мес</p>
-                <p class="box__year" data-price="crm-year">79 000 ₽/год</p>
-              </div>
+        <h2 class="section__title" data-i18n="sectionProduct">MasPlanLot CRM</h2>
+        <article class="box box--crm box--solo">
+          <div class="box__head">
+            <img src="assets/icon.svg" alt="" width="40" height="40">
+            <div>
+              <h3>MasPlanLot CRM</h3>
+              <p class="box__price" data-price="crm-month">7 900 ₽/мес</p>
+              <p class="box__year" data-price="crm-year">79 000 ₽/год</p>
             </div>
-            <p class="box__lead" data-i18n="crmLead">Продажи земельных участков и посёлков.</p>
-            <ul class="box__list">
-              <li data-i18n="crmF1">Генплан и карта — статус каждого участка</li>
-              <li data-i18n="crmF2">Клиенты, сделки, звонки, счета</li>
-              <li data-i18n="crmF3">Команда: владелец, менеджер, просмотр</li>
-              <li data-i18n="crmF4">Импорт из Excel и 1С</li>
-            </ul>
-            <a href="#download" class="btn btn--primary btn--block" data-i18n="tryCrm">Скачать CRM</a>
-          </article>
-
-          <article class="box box--cad">
-            <div class="box__head">
-              <img src="assets/icon-cad.svg" alt="" width="40" height="40">
-              <div>
-                <h3>MasPlanLot CAD</h3>
-                <p class="box__price" data-price="cad-month">5 900 ₽/мес</p>
-                <p class="box__year" data-price="cad-year">59 000 ₽/год</p>
-              </div>
-            </div>
-            <p class="box__lead" data-i18n="cadLead">Чертёж генплана и смета.</p>
-            <ul class="box__list">
-              <li data-i18n="cadF1">Линии, размеры, слои, штриховки</li>
-              <li data-i18n="cadF2">Импорт DWG и DXF</li>
-              <li data-i18n="cadF3">Печать на лист A3/A4</li>
-              <li data-i18n="cadF4">Файлы .mplca и экспорт DXF</li>
-            </ul>
-            <a href="#download" class="btn btn--cad btn--block" data-i18n="tryCad">Скачать CAD</a>
-          </article>
-        </div>
+          </div>
+          <p class="box__lead" data-i18n="crmLead">Продажи земельных участков и посёлков — всё в одном приложении.</p>
+          <ul class="box__list">
+            <li data-i18n="crmF1">Генплан и карта — статус каждого участка</li>
+            <li data-i18n="crmF2">Клиенты, сделки, звонки, счета</li>
+            <li data-i18n="crmF3">Команда: владелец, менеджер, просмотр</li>
+            <li data-i18n="crmF4">Импорт из Excel и 1С</li>
+            <li data-i18n="crmF5">Avito XML, PDF-подборки, лид-форма на витрине</li>
+          </ul>
+          <a href="#download" class="btn btn--primary btn--block" data-i18n="tryCrm">Скачать CRM</a>
+        </article>
       </div>
     </section>
 
@@ -143,7 +122,7 @@
         <ul class="why">
           <li data-i18n-html="why1"><strong>Всё на одном экране</strong> — участок, клиент и статус сделки связаны с картой</li>
           <li data-i18n-html="why2"><strong>Сделано для земли</strong> — генплан, кадастр, лоты, не абстрактная «воронка»</li>
-          <li data-i18n-html="why3"><strong>CRM + CAD</strong> — проектировщик и отдел продаж в одной экосистеме</li>
+          <li data-i18n-html="why3"><strong>Для отдела продаж</strong> — карта, CRM, задачи и витрина без лишних инструментов</li>
           <li data-i18n-html="why4"><strong>Windows + macOS + облако</strong> — desktop-приложение, данные синхронизируются</li>
         </ul>
       </div>
@@ -153,31 +132,16 @@
       <div class="container">
         <h2 class="section__title" data-i18n="pricingTitle">Цены</h2>
         <p class="section__sub" data-i18n="pricingSub">14 дней бесплатно · помесячно или за год (−2 месяца) · T-Bank / PayPal</p>
-        <div class="pricing">
-          <article class="plan">
-            <h3>CRM</h3>
+        <div class="pricing pricing--solo">
+          <article class="plan plan--best">
+            <h3>MasPlanLot CRM</h3>
             <div class="plan__price" data-price="crm-month">7 900 ₽<small>/мес</small></div>
             <div class="plan__year" data-price="crm-year">79 000 ₽/год</div>
-            <p data-i18n="planCrmDesc">Карта, клиенты, сделки, задачи · Avito — автозагрузка</p>
-            <a href="#download" class="btn btn--primary btn--block" data-i18n="choosePlan">Выбрать</a>
-          </article>
-          <article class="plan">
-            <h3>CAD</h3>
-            <div class="plan__price" data-price="cad-month">5 900 ₽<small>/мес</small></div>
-            <div class="plan__year" data-price="cad-year">59 000 ₽/год</div>
-            <p data-i18n="planCadDesc">Чертёж, DWG/DXF, печать, .mplca</p>
-            <a href="#download" class="btn btn--cad btn--block" data-i18n="choosePlan">Выбрать</a>
-          </article>
-          <article class="plan plan--best">
-            <span class="plan__tag" data-i18n="planBestTag">−2 мес.</span>
-            <h3>CRM + CAD</h3>
-            <div class="plan__price" data-price="bundle-month">10 900 ₽<small>/мес</small></div>
-            <div class="plan__year" data-price="bundle-year">109 000 ₽/год</div>
-            <p data-i18n="planBundleDesc">Оба приложения, один биллинг</p>
-            <a href="#download" class="btn btn--outline btn--block" data-i18n="bundlePlan">Комплект</a>
+            <p data-i18n="planCrmDesc">Карта, клиенты, сделки, задачи · Avito — автозагрузка · без ограничения проектов</p>
+            <a href="#download" class="btn btn--primary btn--block" data-i18n="choosePlan">Скачать</a>
           </article>
         </div>
-        <p class="pricing__usd" id="pricingUsd">USD: $99 · $69 · $149 /мес</p>
+        <p class="pricing__usd" id="pricingUsd">USD: $99 /мес · за год: $990</p>
       </div>
     </section>
 
@@ -185,7 +149,7 @@
       <div class="container download">
         <h2 class="section__title"><span data-i18n="downloadTitle">Скачать</span> <span class="version-tag" data-version>v0.4.0</span></h2>
         <p class="section__sub" data-i18n="downloadSub">Windows 10/11 · macOS 12+ (Intel и Apple Silicon) · после установки войдите в аккаунт</p>
-        <div class="download__grid">
+        <div class="download__grid download__grid--solo">
           <div class="dl-group">
             <div class="dl-group__head">
               <img src="assets/icon.svg" alt="" width="40" height="40">
@@ -200,20 +164,6 @@
               <span class="dl-card__file">.dmg</span>
             </a>
           </div>
-          <div class="dl-group">
-            <div class="dl-group__head">
-              <img src="assets/icon-cad.svg" alt="" width="40" height="40">
-              <strong>MasPlanLot CAD</strong>
-            </div>
-            <a href="#" class="dl-card" id="cadWin">
-              <span class="dl-card__os">Windows</span>
-              <span class="dl-card__file">Setup .exe</span>
-            </a>
-            <a href="#" class="dl-card" id="cadMac">
-              <span class="dl-card__os">macOS</span>
-              <span class="dl-card__file">.dmg</span>
-            </a>
-          </div>
         </div>
         <p class="download__note" data-i18n-html="downloadNote">После оплаты вы получите лицензионный ключ по email и активируете его в приложении.</p>
       </div>
@@ -222,7 +172,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <span>© <span id="year"></span> MasPlanLot</span>
+      <span>© <span id="year"></span> MasPlanLot CRM</span>
       <a href="https://daniilcg.github.io/segalcomminc/" target="_blank" rel="noopener noreferrer">SEGAL COMMUNICATIONS</a>
     </div>
   </footer>
