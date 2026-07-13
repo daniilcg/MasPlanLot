@@ -57,19 +57,19 @@
 
   function initPayments(lang) {
     const pay = cfg.PAYMENTS || {};
-    const paypal = document.getElementById('buyPaypal');
     const tbank = document.getElementById('buyTbank');
-    const tbankBlock = document.getElementById('payTbankBlock');
-    const tbankQrLink = document.getElementById('payTbankQrLink');
+    const tbankLink = document.getElementById('payTbankLink');
+    const tbankQrAction = document.getElementById('payTbankQrAction');
     const tbankUrl = pay.tbank || '';
-    if (paypal && pay.paypal) paypal.href = pay.paypal;
+    const showRu = lang === 'ru' && !!tbankUrl;
+
     if (tbank) {
-      const showRu = lang === 'ru' && !!tbankUrl;
       tbank.hidden = !showRu;
       if (tbankUrl) tbank.href = tbankUrl;
     }
-    if (tbankBlock) tbankBlock.hidden = lang !== 'ru' || !tbankUrl;
-    if (tbankQrLink && tbankUrl) tbankQrLink.href = tbankUrl;
+    if (tbankLink && tbankUrl) tbankLink.href = tbankUrl;
+    if (tbankQrAction) tbankQrAction.hidden = !showRu;
+
     const email = pay.licenseEmail || 'segalcomminc@gmail.com';
     document.querySelectorAll('.pay-after a[href^="mailto:"]').forEach((a) => {
       const subject =
@@ -79,6 +79,34 @@
             ? 'MasPlanLot CRM — licenca'
             : 'MasPlanLot CRM — license';
       a.href = 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
+    });
+  }
+
+  function initPayQrPanels() {
+    const panels = [
+      { toggle: 'togglePaypalQr', panel: 'payPaypalPanel' },
+      { toggle: 'toggleTbankQr', panel: 'payTbankPanel' },
+    ];
+
+    panels.forEach(({ toggle, panel }) => {
+      const btn = document.getElementById(toggle);
+      const box = document.getElementById(panel);
+      if (!btn || !box) return;
+
+      btn.addEventListener('click', () => {
+        const open = box.hidden;
+        panels.forEach(({ panel: id }) => {
+          const otherBtn = document.getElementById(
+            id === 'payPaypalPanel' ? 'togglePaypalQr' : 'toggleTbankQr'
+          );
+          const otherBox = document.getElementById(id);
+          if (!otherBox || !otherBtn) return;
+          otherBox.hidden = true;
+          otherBtn.setAttribute('aria-expanded', 'false');
+        });
+        box.hidden = !open;
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
     });
   }
 
@@ -382,5 +410,6 @@
   void initDownloadsFromGitHub();
   initMobileNav();
   initHeroGallery();
+  initPayQrPanels();
   initI18n();
 })();

@@ -50,11 +50,14 @@ window.MASPLANLOT_I18N = {
     getPayLabel: 'Оплата подписки',
     buyPaypal: 'PayPal',
     buyTbank: 'Картой · СБП',
+    payByQr: 'Оплатить по QR',
+    payPaypalHint:
+      'Отсканируйте QR в приложении PayPal. В комментарии к переводу обязательно укажите e-mail, зарегистрированный в MasPlanLot CRM.',
     payTbankHint:
-      'Укажите сумму 7 900 ₽ (месяц) или 79 000 ₽ (год). В поле «Сообщение» можно написать ваш e-mail.',
-    payTbankQr: 'QR для оплаты с телефона',
+      'Укажите сумму 7 900 ₽ (месяц) или 79 000 ₽ (год). В поле «Сообщение» обязательно укажите e-mail, зарегистрированный в MasPlanLot CRM.',
+    payTbankOpen: 'Открыть оплату в браузере',
     payAfterLicense:
-      'После оплаты напишите <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F">нам</a>, обязательно указав свой зарегистрированный e-mail — пришлём ключ.',
+      'После оплаты напишите <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F">нам</a>, если не указали e-mail в комментарии к платежу — пришлём ключ.',
     downloadTitle: 'Скачать',
     downloadNote: 'Установите приложение и войдите в аккаунт — пробный период начнётся автоматически.',
     periodMonth: '/мес',
@@ -140,11 +143,14 @@ window.MASPLANLOT_I18N = {
     getPayLabel: 'Subscribe',
     buyPaypal: 'PayPal',
     buyTbank: 'Card · SBP',
+    payByQr: 'Pay by QR',
+    payPaypalHint:
+      'Scan the QR in the PayPal app. In the payment note, include the email registered in MasPlanLot CRM.',
     payTbankHint:
-      'Enter 7,900 ₽ (month) or 79,000 ₽ (year). You can add your email in the message field.',
-    payTbankQr: 'QR code for mobile payment',
+      'Enter 7,900 ₽ (month) or 79,000 ₽ (year). In the message field, include the email registered in MasPlanLot CRM.',
+    payTbankOpen: 'Open payment in browser',
     payAfterLicense:
-      'After payment email <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20license">us</a> with your registered email address — we will send your license key.',
+      'After payment <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20license">email us</a> if you did not add your email in the payment note — we will send your license key.',
     downloadTitle: 'Download',
     downloadNote: 'Install the app and sign in — your trial starts automatically.',
     periodMonth: '/mo',
@@ -229,9 +235,15 @@ window.MASPLANLOT_I18N = {
     getLead: 'Jedna pretplata otvara sve funkcije. Platite online ili počnite sa probnim periodom.',
     getPayLabel: 'Plaćanje pretplate',
     buyPaypal: 'PayPal',
-    buyYoomoney: 'YooMoney',
+    buyTbank: 'Kartica · SBP',
+    payByQr: 'Plati QR kodom',
+    payPaypalHint:
+      'Skenirajte QR u PayPal aplikaciji. U komentaru obavezno navedite e-mail registrovan u MasPlanLot CRM.',
+    payTbankHint:
+      'Unesite 7.900 ₽ (mesec) ili 79.000 ₽ (godina). U polje za poruku obavezno navedite e-mail registrovan u MasPlanLot CRM.',
+    payTbankOpen: 'Otvori plaćanje u pregledaču',
     payAfterLicense:
-      'Posle uplate pišite <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20licenca">nama</a>, obavezno sa registrovanom e-mail adresom — poslaćemo ključ.',
+      'Posle uplate <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20licenca">pišite nama</a> ako niste naveli e-mail u komentaru — poslaćemo ključ.',
     downloadTitle: 'Preuzmi',
     downloadNote: 'Instalirajte aplikaciju i prijavite se — probni period počinje automatski.',
     periodMonth: '/mes',

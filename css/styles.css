@@ -154,44 +154,52 @@ a { color: inherit; text-decoration: none; }
 .btn--tbank { background: #ffdd2d; color: #333; }
 .btn--tbank:hover { background: #fcc521; }
 .btn--tbank[hidden],
-.pay-tbank[hidden] { display: none; }
+.pay-qr-actions[hidden],
+.pay-qr-panel[hidden] { display: none; }
 
-.pay-tbank {
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.45);
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+
+.btn--ghost:hover { background: rgba(255, 255, 255, 0.72); }
+
+.pay-qr-actions {
+  margin-top: 0.65rem;
+}
+
+.pay-qr-panel {
   margin-top: 1rem;
   text-align: center;
 }
 
-.pay-tbank__hint {
+.pay-qr-panel__hint {
   font-size: 0.8125rem;
   color: var(--muted);
   line-height: 1.55;
   margin-bottom: 0.85rem;
 }
 
-.pay-tbank__qr {
+.pay-qr-panel__code {
   display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1rem;
+  padding: 0.85rem;
   border-radius: var(--radius-sm);
-  transition: transform 0.15s, box-shadow 0.15s;
 }
 
-.pay-tbank__qr:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
-
-.pay-tbank__qr img {
+.pay-qr-panel__code img {
   border-radius: 8px;
 }
 
-.pay-tbank__qr span {
+.pay-qr-panel__link {
+  display: inline-block;
+  margin-top: 0.75rem;
   font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--muted);
+  font-weight: 600;
+  color: var(--accent);
 }
+
+.pay-qr-panel__link:hover { text-decoration: underline; }
 
 .btn--yoomoney { background: #7c3aed; color: var(--white); }
 .btn--yoomoney:hover { background: #6d28d9; }
