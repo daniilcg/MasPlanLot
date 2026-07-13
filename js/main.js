@@ -60,17 +60,16 @@
     const paypal = document.getElementById('buyPaypal');
     const tbank = document.getElementById('buyTbank');
     const tbankLink = document.getElementById('payTbankLink');
-    const tbankQrAction = document.getElementById('payTbankQrAction');
+    const tbankCol = document.getElementById('payTbankCol');
+    const payGrid = document.getElementById('payGrid');
     const tbankUrl = pay.tbank || '';
     const showRu = lang === 'ru' && !!tbankUrl;
 
     if (paypal && pay.paypal) paypal.href = pay.paypal;
-    if (tbank) {
-      tbank.hidden = !showRu;
-      if (tbankUrl) tbank.href = tbankUrl;
-    }
+    if (tbank && tbankUrl) tbank.href = tbankUrl;
     if (tbankLink && tbankUrl) tbankLink.href = tbankUrl;
-    if (tbankQrAction) tbankQrAction.hidden = !showRu;
+    if (tbankCol) tbankCol.hidden = !showRu;
+    if (payGrid) payGrid.classList.toggle('pay-grid--solo', !showRu);
 
     const email = pay.licenseEmail || 'segalcomminc@gmail.com';
     document.querySelectorAll('.pay-after a[href^="mailto:"]').forEach((a) => {

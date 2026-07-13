@@ -153,8 +153,7 @@ a { color: inherit; text-decoration: none; }
 
 .btn--tbank { background: #ffdd2d; color: #333; }
 .btn--tbank:hover { background: #fcc521; }
-.btn--tbank[hidden],
-.pay-qr-actions[hidden],
+.pay-col[hidden],
 .pay-qr-panel[hidden] { display: none; }
 
 .btn--ghost {
@@ -165,16 +164,35 @@ a { color: inherit; text-decoration: none; }
 
 .btn--ghost:hover { background: rgba(255, 255, 255, 0.72); }
 
-.pay-qr-actions {
-  margin-top: 0.65rem;
+.pay-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+  align-items: start;
 }
 
-.pay-qr-actions + .pay-qr-actions {
-  margin-top: 0.45rem;
+.pay-grid--solo {
+  grid-template-columns: 1fr;
+}
+
+.pay-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.pay-col__qr {
+  font-size: 0.8125rem;
+  padding: 0.55rem 0.75rem;
+}
+
+.pay-col .pay-qr-panel {
+  margin-top: 0.25rem;
+  text-align: center;
 }
 
 .pay-qr-panel {
-  margin-top: 1rem;
   text-align: center;
 }
 
