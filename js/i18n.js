@@ -149,6 +149,7 @@ window.MASPLANLOT_I18N = {
     buyTbank: 'Card · SBP',
     payByQr: 'Pay by QR',
     payPaypalQr: 'PayPal · QR',
+    payQrLoading: 'Generating QR…',
     payPaypalHint:
       'Scan the QR in the PayPal app. In the payment note, include the email registered in MasPlanLot CRM.',
     payTbankHint:
@@ -245,8 +246,9 @@ window.MASPLANLOT_I18N = {
     buyTbank: 'Kartica · SBP',
     payByQr: 'Plati QR kodom',
     payPaypalQr: 'PayPal · QR',
+    payQrLoading: 'Generisanje QR…',
     payPaypalHint:
-      'Skenirajte QR u PayPal aplikaciji. U komentaru obavezno navedite e-mail registrovan u MasPlanLot CRM.',
+      'Skenirajte QR u PayPal aplikaciji. Plaćanje je u evrima (79 € / 790 €). U komentaru obavezno navedite e-mail registrovan u MasPlanLot CRM.',
     payTbankHint:
       'Unesite 7.900 ₽ (mesec) ili 79.000 ₽ (godina). U polje za poruku obavezno navedite e-mail registrovan u MasPlanLot CRM.',
     payTbankOpen: 'Otvori plaćanje u pregledaču',

@@ -18,25 +18,32 @@
     return '$' + grouped;
   }
 
-  function priceValue(product, period, lang) {
+  function priceValue(product, period, lang, currencyKey) {
     const p = P[product];
     if (!p) return null;
-    const cur = (CURRENCY_BY_LANG[lang] || 'rub').replace(/^\w/, (c) => c.toUpperCase());
+    const cur = currencyKey || (CURRENCY_BY_LANG[lang] || 'rub').replace(/^\w/, (c) => c.toUpperCase());
     return p[period + cur];
   }
 
-  function paypalAmountForLang(lang, period) {
-    const amount = priceValue('crm', period, lang === 'sr' ? 'en' : lang);
-    return amount == null ? null : amount;
+  function paypalPaymentForLang(lang, period) {
+    if (lang === 'en') {
+      const amount = priceValue('crm', period, 'en');
+      return amount == null ? null : { amount, currency: 'USD' };
+    }
+    if (lang === 'sr') {
+      const amount = priceValue('crm', period, 'sr', 'Eur');
+      return amount == null ? null : { amount, currency: 'EUR' };
+    }
+    return null;
   }
 
   function buildPaypalUrl(base, lang, period) {
     if (!base) return '#';
     const clean = base.replace(/\/$/, '');
     if (lang === 'ru') return clean;
-    const amount = paypalAmountForLang(lang, period);
-    if (amount == null) return clean;
-    return clean + '/' + amount + 'USD';
+    const payment = paypalPaymentForLang(lang, period);
+    if (!payment) return clean;
+    return clean + '/' + payment.amount + payment.currency;
   }
 
   let billingPeriod = 'month';

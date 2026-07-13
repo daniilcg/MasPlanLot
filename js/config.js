@@ -14,7 +14,9 @@ window.MASPLANLOT_CONFIG = {
     "monthUsd": 99,
     "yearUsd": 990,
     "monthRsd": 8900,
-    "yearRsd": 89000
+    "yearRsd": 89000,
+    "monthEur": 79,
+    "yearEur": 790
   }
 },
   DOWNLOADS: {
