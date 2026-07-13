@@ -36,31 +36,21 @@
     const monthSuffix = pack.periodMonth || '/мес';
     const yearSuffix = pack.periodYear || '/год';
 
-    const monthVal = priceValue('crm', 'month', lang);
-    document.querySelectorAll('[data-price="crm-month"]').forEach((el) => {
-      if (monthVal == null) return;
-      if (el.classList.contains('get-card__amount')) {
-        el.innerHTML = fmtMoney(monthVal, lang) + '<span>' + monthSuffix + '</span>';
-      } else {
-        el.textContent = fmtMoney(monthVal, lang) + monthSuffix;
-      }
+    const map = [
+      ['crm-month', 'crm', 'month', monthSuffix],
+      ['crm-year', 'crm', 'year', yearSuffix],
+    ];
+    map.forEach(([key, product, period, suffix]) => {
+      const val = priceValue(product, period, lang);
+      document.querySelectorAll('[data-price="' + key + '"]').forEach((el) => {
+        if (val == null) return;
+        if (el.classList.contains('plan__price')) {
+          el.innerHTML = fmtMoney(val, lang) + '<small>' + suffix + '</small>';
+        } else {
+          el.textContent = fmtMoney(val, lang) + suffix;
+        }
+      });
     });
-
-    const yearVal = priceValue('crm', 'year', lang);
-    document.querySelectorAll('[data-price="crm-year"]').forEach((el) => {
-      if (yearVal == null) return;
-      el.textContent = fmtMoney(yearVal, lang);
-    });
-
-    const yearLine = document.querySelector('.get-card__year[data-i18n-html="getYearPrice"]');
-    if (yearLine && yearVal != null && pack.getYearOr && pack.getYearFor) {
-      yearLine.innerHTML =
-        pack.getYearOr +
-        ' <strong>' +
-        fmtMoney(yearVal, lang) +
-        '</strong> ' +
-        pack.getYearFor;
-    }
   }
 
   function initPayments(lang) {
