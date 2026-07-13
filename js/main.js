@@ -4,7 +4,9 @@
   const P = cfg.PRICING || {};
   const D = cfg.DOWNLOADS || {};
   const V = cfg.VERSION || '0.4.0';
-  const APP = cfg.APP_URL || 'http://localhost:3000';
+  const APP = cfg.APP_URL || '';
+  const APP_IS_PUBLIC =
+    /^https?:\/\//i.test(APP) && !/localhost|127\.0\.0\.1/i.test(APP);
 
   // Display currency follows UI language: ru → ₽, en → $, sr → dinars.
   const CURRENCY_BY_LANG = { ru: 'rub', en: 'usd', sr: 'rsd' };
@@ -65,8 +67,17 @@
   }
 
   function initAppLinks() {
+    const base = APP.replace(/\/$/, '');
     document.querySelectorAll('[data-app-link]').forEach((el) => {
-      el.href = APP + el.getAttribute('data-app-link');
+      if (APP_IS_PUBLIC) {
+        el.href = base + el.getAttribute('data-app-link');
+        el.hidden = false;
+      } else {
+        el.hidden = true;
+      }
+    });
+    document.querySelectorAll('[data-app-block]').forEach((el) => {
+      el.hidden = !APP_IS_PUBLIC;
     });
   }
 
@@ -211,13 +222,35 @@
   }
 
   function applyDownloadLinks(crm) {
+    const fallback = D.crm || {};
+    const releasesPage =
+      'https://github.com/' +
+      (cfg.RELEASES?.owner || 'daniilcg') +
+      '/' +
+      (cfg.RELEASES?.repo || 'MasPlanLot') +
+      '/releases/latest';
+
     const map = [
-      ['crmWin', crm?.win],
-      ['crmMac', crm?.mac],
+      ['crmWin', crm?.win || fallback.win],
+      ['crmMac', crm?.mac || fallback.mac],
     ];
+
     map.forEach(([id, href]) => {
       const el = document.getElementById(id);
-      if (el && href) el.href = href;
+      if (!el) return;
+
+      const url = href || releasesPage;
+      el.href = url;
+      el.target = '_blank';
+      el.rel = 'noopener noreferrer';
+
+      if (!href) {
+        el.classList.add('dl-card--disabled');
+        el.setAttribute('aria-disabled', 'true');
+      } else {
+        el.classList.remove('dl-card--disabled');
+        el.removeAttribute('aria-disabled');
+      }
     });
   }
 
@@ -236,7 +269,10 @@
 
     try {
       const latest = await window.fetchMasPlanLotReleaseDownloads();
-      applyDownloadLinks(latest.crm);
+      applyDownloadLinks({
+        win: latest.crm?.win || D.crm?.win,
+        mac: latest.crm?.mac || null,
+      });
       if (latest.version) {
         document.querySelectorAll('[data-version]').forEach((el) => {
           el.textContent = 'v' + latest.version;
@@ -522,6 +558,7 @@
 
   loadBillingPeriod();
   initAppLinks();
+  initDownloads();
   void initDownloadsFromGitHub();
   initMobileNav();
   initHeroGallery();

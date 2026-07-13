@@ -9,8 +9,8 @@
     for (const asset of assets || []) {
       const name = asset.name || '';
       const url = asset.browser_download_url;
-      if (!links.crm.win && /MasPlanLot\.?CRM.*Setup.*\.exe$/i.test(name)) links.crm.win = url;
-      if (!links.crm.mac && /MasPlanLot\.?CRM.*mac\.dmg$/i.test(name)) links.crm.mac = url;
+      if (!links.crm.win && /MasPlanLot[\s.]CRM.*Setup.*\.exe$/i.test(name)) links.crm.win = url;
+      if (!links.crm.mac && /MasPlanLot[\s.]CRM.*mac\.dmg$/i.test(name)) links.crm.mac = url;
     }
     return links;
   }

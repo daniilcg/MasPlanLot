@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css?v=16">
+  <link rel="stylesheet" href="css/styles.css?v=18">
 </head>
 <body>
 
@@ -31,6 +31,7 @@
           <option value="en">EN</option>
           <option value="sr">SR</option>
         </select>
+        <a href="#" class="btn btn--ghost header__login" data-app-link="/login" data-i18n="navLogin" hidden>Войти</a>
         <a href="#get" class="btn btn--primary" data-i18n="trial">14 дней бесплатно</a>
         <button type="button" class="menu-toggle" id="menuToggle" data-i18n-aria="menuOpen" aria-label="Меню">☰</button>
       </div>
@@ -45,6 +46,7 @@
         <a href="#get" data-i18n="navGet">Тариф</a>
         <a href="#reviews" data-i18n="navReviews">Отзывы</a>
         <a href="#support" data-i18n="navSupport">Поддержка</a>
+        <a href="#" data-app-link="/login" data-i18n="navLogin" hidden>Войти</a>
       </nav>
       <a href="#get" class="btn btn--primary btn--block" data-i18n="trial">14 дней бесплатно</a>
     </div>
@@ -191,6 +193,21 @@
             <p class="pay-after" data-i18n-html="payAfterLicense"></p>
           </div>
 
+          <div class="pricing-card__block" data-app-block hidden>
+            <p class="pricing-card__label" data-i18n="webTitle">Работать в браузере</p>
+            <div class="download-row">
+              <a href="#" class="dl-card dl-card--accent glass" data-app-link="/register">
+                <span class="dl-card__os" data-i18n="webRegister">Создать аккаунт</span>
+                <span class="dl-card__file" data-i18n="webRegisterSub">Начать бесплатно</span>
+              </a>
+              <a href="#" class="dl-card glass" data-app-link="/login">
+                <span class="dl-card__os" data-i18n="webLogin">Войти</span>
+                <span class="dl-card__file" data-i18n="webLoginSub">Личный кабинет</span>
+              </a>
+            </div>
+            <p class="pricing-card__note" data-i18n="webNote">Личный кабинет открывается прямо в браузере. Данные синхронизируются с приложением для Windows и macOS.</p>
+          </div>
+
           <div class="pricing-card__block">
             <p class="pricing-card__label">
               <span data-i18n="downloadTitle">Скачать</span>
@@ -296,9 +313,9 @@
     </div>
   </footer>
 
-  <script src="js/i18n.js?v=15"></script>
-  <script src="js/config.js?v=15"></script>
-  <script src="js/releases.js?v=15"></script>
-  <script src="js/main.js?v=15"></script>
+  <script src="js/i18n.js?v=18"></script>
+  <script src="js/config.js?v=18"></script>
+  <script src="js/releases.js?v=18"></script>
+  <script src="js/main.js?v=18"></script>
 </body>
 </html>

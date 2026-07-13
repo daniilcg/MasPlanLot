@@ -1,7 +1,7 @@
 /** Auto-generated — node scripts/sync-marketing-config.js */
 window.MASPLANLOT_CONFIG = {
-  APP_URL: '.',
-  VERSION: '0.5.0',
+  APP_URL: '',
+  VERSION: '0.5.1',
   RELEASES: {
     owner: 'daniilcg',
     repo: 'MasPlanLot',
@@ -21,8 +21,8 @@ window.MASPLANLOT_CONFIG = {
 },
   DOWNLOADS: {
     crm: {
-      win: 'https://github.com/daniilcg/MasPlanLot/releases/latest/download/MasPlanLot.CRM.Setup.0.5.0.exe',
-      mac: 'https://github.com/daniilcg/MasPlanLot/releases/latest/download/MasPlanLot.CRM-0.5.0-mac.dmg',
+      win: 'https://github.com/daniilcg/MasPlanLot/releases/latest/download/MasPlanLot.CRM.Setup.0.5.1.exe',
+      mac: 'https://github.com/daniilcg/MasPlanLot/releases/latest/download/MasPlanLot%20CRM-0.5.1-mac.dmg',
     },
   },
   PAYMENTS: {

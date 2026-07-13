@@ -709,6 +709,21 @@ a { color: inherit; text-decoration: none; }
   margin-top: 0.125rem;
 }
 
+.dl-card--accent {
+  border: 1px solid var(--accent);
+  background: rgba(0, 113, 227, 0.06);
+}
+.dl-card--accent .dl-card__os { color: var(--accent); }
+
+.dl-card--disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+.dl-card--disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
 .pricing-card__note {
   margin-top: 0.85rem;
   font-size: 0.8125rem;
@@ -951,7 +966,8 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 767px) {
   .nav,
-  .header__actions .btn--primary { display: none; }
+  .header__actions .btn--primary,
+  .header__actions .header__login { display: none; }
   .menu-toggle { display: block; }
 
   .hero { padding-top: 6.5rem; }
