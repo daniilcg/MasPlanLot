@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/styles.css?v=14">
+  <link rel="stylesheet" href="css/styles.css?v=15">
 </head>
 <body>
 
@@ -163,8 +163,12 @@
                 <button type="button" class="btn btn--ghost btn--block pay-col__qr" id="togglePaypalQr" data-i18n="payPaypalQr" aria-expanded="false" aria-controls="payPaypalPanel">PayPal · QR</button>
                 <div class="pay-qr-panel" id="payPaypalPanel" hidden>
                   <p class="pay-qr-panel__hint" data-i18n="payPaypalHint">Отсканируйте QR в приложении PayPal. В комментарии укажите e-mail, зарегистрированный в MasPlanLot CRM.</p>
-                  <div class="pay-qr-panel__code glass">
-                    <img src="assets/img/pay-paypal-qr.png" alt="" width="148" height="148" loading="lazy">
+                  <div class="pay-qr-panel__code glass" data-qr-code>
+                    <div class="pay-qr-loader" aria-hidden="true">
+                      <span class="pay-qr-loader__grid"></span>
+                      <span class="pay-qr-loader__text" data-i18n="payQrLoading">Генерация QR…</span>
+                    </div>
+                    <img class="pay-qr-panel__img" src="assets/img/pay-paypal-qr.png" alt="" width="148" height="148">
                   </div>
                 </div>
               </div>
@@ -173,8 +177,12 @@
                 <button type="button" class="btn btn--ghost btn--block pay-col__qr" id="toggleTbankQr" data-i18n="payByQr" aria-expanded="false" aria-controls="payTbankPanel">Оплатить по QR</button>
                 <div class="pay-qr-panel" id="payTbankPanel" hidden>
                   <p class="pay-qr-panel__hint" data-i18n="payTbankHint">Укажите сумму 7 900 ₽ (месяц) или 79 000 ₽ (год). В поле «Сообщение» обязательно укажите e-mail, зарегистрированный в MasPlanLot CRM.</p>
-                  <div class="pay-qr-panel__code glass">
-                    <img src="assets/img/pay-tbank-qr.png" alt="" width="148" height="148" loading="lazy">
+                  <div class="pay-qr-panel__code glass" data-qr-code>
+                    <div class="pay-qr-loader" aria-hidden="true">
+                      <span class="pay-qr-loader__grid"></span>
+                      <span class="pay-qr-loader__text" data-i18n="payQrLoading">Генерация QR…</span>
+                    </div>
+                    <img class="pay-qr-panel__img" src="assets/img/pay-tbank-qr.png" alt="" width="148" height="148">
                   </div>
                   <a href="#" id="payTbankLink" class="pay-qr-panel__link" target="_blank" rel="noopener noreferrer" data-i18n="payTbankOpen">Открыть оплату в браузере</a>
                 </div>
@@ -288,9 +296,9 @@
     </div>
   </footer>
 
-  <script src="js/i18n.js?v=14"></script>
-  <script src="js/config.js?v=14"></script>
-  <script src="js/releases.js?v=14"></script>
-  <script src="js/main.js?v=14"></script>
+  <script src="js/i18n.js?v=15"></script>
+  <script src="js/config.js?v=15"></script>
+  <script src="js/releases.js?v=15"></script>
+  <script src="js/main.js?v=15"></script>
 </body>
 </html>

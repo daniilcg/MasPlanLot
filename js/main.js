@@ -141,6 +141,35 @@
     });
   }
 
+  const QR_REVEAL_MS = 420;
+
+  function resetQrCodeState(codeEl) {
+    if (!codeEl) return;
+    codeEl.classList.remove('is-ready');
+    if (codeEl._qrTimer) {
+      window.clearTimeout(codeEl._qrTimer);
+      codeEl._qrTimer = null;
+    }
+  }
+
+  function playQrReveal(panel) {
+    const codeEl = panel?.querySelector('[data-qr-code]');
+    if (!codeEl) return;
+
+    resetQrCodeState(codeEl);
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      codeEl.classList.add('is-ready');
+      return;
+    }
+
+    codeEl._qrTimer = window.setTimeout(() => {
+      codeEl.classList.add('is-ready');
+      codeEl._qrTimer = null;
+    }, QR_REVEAL_MS);
+  }
+
   function initPayQrPanels() {
     const panels = [
       { toggle: 'togglePaypalQr', panel: 'payPaypalPanel' },
@@ -162,9 +191,14 @@
           if (!otherBox || !otherBtn) return;
           otherBox.hidden = true;
           otherBtn.setAttribute('aria-expanded', 'false');
+          resetQrCodeState(otherBox.querySelector('[data-qr-code]'));
         });
+
         box.hidden = !open;
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+
+        if (open) playQrReveal(box);
+        else resetQrCodeState(box.querySelector('[data-qr-code]'));
       });
     });
   }

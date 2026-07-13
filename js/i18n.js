@@ -52,6 +52,7 @@ window.MASPLANLOT_I18N = {
     buyTbank: 'Картой · СБП',
     payByQr: 'Оплатить по QR',
     payPaypalQr: 'PayPal · QR',
+    payQrLoading: 'Генерация QR…',
     payPaypalHint:
       'Отсканируйте QR в приложении PayPal. В комментарии к переводу обязательно укажите e-mail, зарегистрированный в MasPlanLot CRM.',
     payTbankHint:
