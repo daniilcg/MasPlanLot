@@ -59,6 +59,8 @@ window.MASPLANLOT_I18N = {
     payTbankHint:
       'Укажите сумму 7 900 ₽ (месяц) или 79 000 ₽ (год). В поле «Сообщение» обязательно укажите e-mail, зарегистрированный в MasPlanLot CRM.',
     payTbankOpen: 'Открыть оплату в браузере',
+    payAfterEmailNote:
+      'В комментарии к платежу (PayPal или Т-Банк) обязательно укажите e-mail, зарегистрированный в MasPlanLot CRM.',
     payAfterLicense:
       'После оплаты активируйте ключ в <a href="#" data-pay-after="app">личном кабинете</a> (раздел «Подписка»). Вопросы — <a href="#" data-pay-after="support">на сайте MasPlanLot</a> (тарифы, оплата, поддержка).',
     webTitle: 'Работать в браузере',
@@ -163,6 +165,8 @@ window.MASPLANLOT_I18N = {
     payTbankHint:
       'Enter 7,900 ₽ (month) or 79,000 ₽ (year). In the message field, include the email registered in MasPlanLot CRM.',
     payTbankOpen: 'Open payment in browser',
+    payAfterEmailNote:
+      'In the payment note (PayPal or T-Bank) you must include the email registered in MasPlanLot CRM.',
     payAfterLicense:
       'After payment, activate your key in the <a href="#" data-pay-after="app">web app</a> (Billing). Questions — <a href="#" data-pay-after="support">MasPlanLot website</a> (pricing, payment, support).',
     webTitle: 'Use in browser',
@@ -267,6 +271,8 @@ window.MASPLANLOT_I18N = {
     payTbankHint:
       'Unesite 7.900 ₽ (mesec) ili 79.000 ₽ (godina). U polje za poruku obavezno navedite e-mail registrovan u MasPlanLot CRM.',
     payTbankOpen: 'Otvori plaćanje u pregledaču',
+    payAfterEmailNote:
+      'U napomeni uz plaćanje (PayPal ili T-Bank) obavezno navedite e-mail registrovan u MasPlanLot CRM.',
     payAfterLicense:
       'Posle uplate aktivirajte ključ u <a href="#" data-pay-after="app">veb aplikaciji</a> (Pretplata). Pitanja — <a href="#" data-pay-after="support">sajt MasPlanLot</a> (tarife, plaćanje, podrška).',
     webTitle: 'Rad u pregledaču',
