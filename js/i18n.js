@@ -60,7 +60,7 @@ window.MASPLANLOT_I18N = {
       'Укажите сумму 7 900 ₽ (месяц) или 79 000 ₽ (год). В поле «Сообщение» обязательно укажите e-mail, зарегистрированный в MasPlanLot CRM.',
     payTbankOpen: 'Открыть оплату в браузере',
     payAfterLicense:
-      'После оплаты напишите <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F">нам</a>, если не указали e-mail в комментарии к платежу — пришлём ключ.',
+      'После оплаты активируйте ключ в <a href="#" data-pay-after="app">личном кабинете</a> (раздел «Подписка»). Вопросы — <a href="#" data-pay-after="support">на сайте MasPlanLot</a> (тарифы, оплата, поддержка).',
     webTitle: 'Работать в браузере',
     webRegister: 'Создать аккаунт',
     webRegisterSub: 'Начать бесплатно',
@@ -164,7 +164,7 @@ window.MASPLANLOT_I18N = {
       'Enter 7,900 ₽ (month) or 79,000 ₽ (year). In the message field, include the email registered in MasPlanLot CRM.',
     payTbankOpen: 'Open payment in browser',
     payAfterLicense:
-      'After payment <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20license">email us</a> if you did not add your email in the payment note — we will send your license key.',
+      'After payment, activate your key in the <a href="#" data-pay-after="app">web app</a> (Billing). Questions — <a href="#" data-pay-after="support">MasPlanLot website</a> (pricing, payment, support).',
     webTitle: 'Use in browser',
     webRegister: 'Create account',
     webRegisterSub: 'Start for free',
@@ -268,7 +268,7 @@ window.MASPLANLOT_I18N = {
       'Unesite 7.900 ₽ (mesec) ili 79.000 ₽ (godina). U polje za poruku obavezno navedite e-mail registrovan u MasPlanLot CRM.',
     payTbankOpen: 'Otvori plaćanje u pregledaču',
     payAfterLicense:
-      'Posle uplate <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20licenca">pišite nama</a> ako niste naveli e-mail u komentaru — poslaćemo ključ.',
+      'Posle uplate aktivirajte ključ u <a href="#" data-pay-after="app">veb aplikaciji</a> (Pretplata). Pitanja — <a href="#" data-pay-after="support">sajt MasPlanLot</a> (tarife, plaćanje, podrška).',
     webTitle: 'Rad u pregledaču',
     webRegister: 'Napravi nalog',
     webRegisterSub: 'Počnite besplatno',

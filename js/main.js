@@ -147,15 +147,17 @@
     if (tbankCol) tbankCol.hidden = !showRu;
     if (payGrid) payGrid.classList.toggle('pay-grid--solo', !showRu);
 
-    const email = pay.licenseEmail || 'segalcomminc@gmail.com';
-    document.querySelectorAll('.pay-after a[href^="mailto:"]').forEach((a) => {
-      const subject =
-        lang === 'ru'
-          ? 'MasPlanLot CRM — лицензия'
-          : lang === 'sr'
-            ? 'MasPlanLot CRM — licenca'
-            : 'MasPlanLot CRM — license';
-      a.href = 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
+    const site = 'https://daniilcg.github.io/MasPlanLot';
+    const appBase = APP_IS_PUBLIC ? APP.replace(/\/$/, '') : site;
+    document.querySelectorAll('[data-pay-after="app"]').forEach((a) => {
+      a.href = APP_IS_PUBLIC ? appBase + '/login' : site + '/#get';
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    });
+    document.querySelectorAll('[data-pay-after="support"]').forEach((a) => {
+      a.href = site + '/#support';
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
     });
   }
 
@@ -391,7 +393,7 @@
     const submitBtn = document.getElementById('supportSubmit');
     const subjectHidden = document.getElementById('supportFormSubject');
     const nextHidden = document.getElementById('supportFormNext');
-    const supportTo = (cfg.PAYMENTS || {}).licenseEmail || 'segalcomminc@gmail.com';
+    const supportTo = 'segalcomminc@gmail.com';
 
     form.action = 'https://formsubmit.co/' + supportTo;
 
