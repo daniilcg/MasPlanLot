@@ -242,6 +242,63 @@ a { color: inherit; text-decoration: none; }
 
 .box__list li { padding: 0.2rem 0; }
 
+.box__list--compact {
+  margin-bottom: 1.25rem;
+}
+
+.pay-buttons {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.pay-buttons .btn--block {
+  margin-top: 0;
+}
+
+.btn--paypal {
+  background: #0070ba;
+  color: var(--white);
+  border: none;
+}
+
+.btn--paypal:hover {
+  background: #005ea6;
+}
+
+.btn--yoomoney {
+  background: #8b3ffd;
+  color: var(--white);
+  border: none;
+}
+
+.btn--yoomoney:hover {
+  background: #7429e8;
+}
+
+.btn--yoomoney[hidden] {
+  display: none;
+}
+
+.pay-after {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.pay-after a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pay-after a:hover {
+  text-decoration: underline;
+}
+
 .box--crm { border-top: 3px solid var(--blue); }
 
 /* Why */
@@ -394,49 +451,6 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   font-size: 0.8125rem;
   color: var(--muted);
-}
-
-.pricing__payment {
-  max-width: 32rem;
-  margin: 1.75rem auto 0;
-  padding: 1.25rem 1.5rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  text-align: left;
-  font-size: 0.9375rem;
-  color: var(--ink);
-}
-
-.pricing__payment-title {
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-}
-
-.pricing__steps {
-  margin: 0;
-  padding-left: 1.25rem;
-  line-height: 1.6;
-}
-
-.pricing__steps li + li {
-  margin-top: 0.35rem;
-}
-
-.pricing__trial-link {
-  margin-top: 1.25rem;
-  text-align: center;
-  font-size: 0.9375rem;
-}
-
-.pricing__trial-link a {
-  color: var(--blue);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.pricing__trial-link a:hover {
-  text-decoration: underline;
 }
 
 /* Download */

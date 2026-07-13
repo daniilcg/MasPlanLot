@@ -62,6 +62,28 @@
     }
   }
 
+  function initPayments(lang) {
+    const pay = cfg.PAYMENTS || {};
+    const paypal = document.getElementById('buyPaypal');
+    const yoomoney = document.getElementById('buyYoomoney');
+    if (paypal && pay.paypal) paypal.href = pay.paypal;
+    if (yoomoney) {
+      yoomoney.hidden = lang !== 'ru';
+      if (pay.yoomoney) yoomoney.href = pay.yoomoney;
+    }
+    const email = pay.licenseEmail || 'segalcomminc@gmail.com';
+    document.querySelectorAll('.pay-after a[href^="mailto:"]').forEach((a) => {
+      const subject =
+        lang === 'ru'
+          ? 'MasPlanLot CRM — лицензия'
+          : lang === 'sr'
+            ? 'MasPlanLot CRM — licenca'
+            : 'MasPlanLot CRM — license';
+      a.href = 'mailto:' + email + '?subject=' + encodeURIComponent(subject);
+      a.textContent = email;
+    });
+  }
+
   function applyDownloadLinks(crm) {
     const map = [
       ['crmWin', crm?.win],
@@ -160,6 +182,7 @@
       document.documentElement.lang = l;
 
       initPricing(l);
+      initPayments(l);
       initAppLinks();
     }
 

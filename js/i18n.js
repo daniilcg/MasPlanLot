@@ -37,7 +37,10 @@ window.MASPLANLOT_I18N = {
     crmF3: 'Команда: владелец, менеджер, просмотр',
     crmF4: 'Импорт из Excel и 1С',
     crmF5: 'Avito XML, PDF-подборки, лид-форма на витрине',
-    productPricingCta: 'Тарифы и оплата',
+    buyPaypal: 'Купить · PayPal',
+    buyYoomoney: 'Купить · ЮMoney',
+    payAfterLicense:
+      'После оплаты напишите на <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20%D0%BB%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F">segalcomminc@gmail.com</a> — пришлём ключ.',
     whyTitle: 'Почему MasPlanLot',
     why1: '<strong>Всё на одном экране</strong> — участок, клиент и статус сделки связаны с картой',
     why2: '<strong>Сделано для земли</strong> — генплан, кадастр, лоты, не абстрактная «воронка»',
@@ -45,12 +48,6 @@ window.MASPLANLOT_I18N = {
     why4: '<strong>Windows + macOS + облако</strong> — desktop-приложение, данные синхронизируются',
     pricingTitle: 'Цены',
     pricingSub: '14 дней бесплатно · помесячно или за год (−2 месяца)',
-    planCrmDesc: 'Карта, клиенты, сделки, задачи · Avito — автозагрузка · без ограничения проектов',
-    pricingPayment:
-      '<p class="pricing__payment-title">Как оплатить после триала</p><ol class="pricing__steps"><li>Оплатите переводом: <strong>PayPal @segalcomminc</strong> или <strong>Т-Банк / ЮMoney</strong> (РФ)</li><li>Укажите email вашего аккаунта MasPlanLot</li><li>Получите лицензионный ключ на email</li><li>Активируйте ключ в приложении → «Подписка»</li></ol>',
-    pricingDownloadLink: 'Скачать и начать 14‑дневный триал →',
-    pricingUsdPrefix: 'Помесячно:',
-    pricingUsdYear: 'за год:',
     downloadTitle: 'Скачать',
     downloadSub:
       'Windows 10/11 · macOS 12+ (Intel и Apple Silicon) · установите и войдите в аккаунт',
@@ -96,7 +93,10 @@ window.MASPLANLOT_I18N = {
     crmF3: 'Team roles: owner, manager, viewer',
     crmF4: 'Import from Excel and 1C',
     crmF5: 'LandWatch CSV, PDF selections, lead form on showcase',
-    productPricingCta: 'Pricing & payment',
+    buyPaypal: 'Buy · PayPal',
+    buyYoomoney: 'Buy · YooMoney',
+    payAfterLicense:
+      'After payment email <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20license">segalcomminc@gmail.com</a> for your license key.',
     whyTitle: 'Why MasPlanLot',
     why1: '<strong>Everything on one screen</strong> — lot, client and deal status linked to the map',
     why2: '<strong>Built for land</strong> — master plan, cadastre, lots, not a generic sales funnel',
@@ -104,12 +104,6 @@ window.MASPLANLOT_I18N = {
     why4: '<strong>Windows + macOS + cloud</strong> — desktop app with synced data',
     pricingTitle: 'Pricing',
     pricingSub: '14-day free trial · monthly or yearly (−2 months)',
-    planCrmDesc: 'Map, clients, deals, tasks · LandWatch CSV · unlimited projects',
-    pricingPayment:
-      '<p class="pricing__payment-title">How to pay after trial</p><ol class="pricing__steps"><li>Pay via <strong>PayPal @segalcomminc</strong> or <strong>T-Bank / YooMoney</strong> (Russia)</li><li>Include your MasPlanLot account email</li><li>Receive a license key by email</li><li>Activate in the app → Billing</li></ol>',
-    pricingDownloadLink: 'Download and start 14-day trial →',
-    pricingUsdPrefix: 'Monthly:',
-    pricingUsdYear: 'yearly:',
     downloadTitle: 'Download',
     downloadSub:
       'Windows 10/11 · macOS 12+ (Intel & Apple Silicon) · install and sign in',
@@ -155,7 +149,10 @@ window.MASPLANLOT_I18N = {
     crmF3: 'Tim: vlasnik, menadžer, pregled',
     crmF4: 'Uvoz iz Excel-a i 1C',
     crmF5: '4zida, Halo Oglasi, Agentiz · PDF podborke · lead forma',
-    productPricingCta: 'Tarife i plaćanje',
+    buyPaypal: 'Kupi · PayPal',
+    buyYoomoney: 'Kupi · YooMoney',
+    payAfterLicense:
+      'Posle uplate pišite na <a href="mailto:segalcomminc@gmail.com?subject=MasPlanLot%20CRM%20%E2%80%94%20licenca">segalcomminc@gmail.com</a> — poslaćemo ključ.',
     whyTitle: 'Zašto MasPlanLot',
     why1: '<strong>Sve na jednom ekranu</strong> — parcela, klijent i status posla povezani sa mapom',
     why2: '<strong>Prilagođeno zemlji</strong> — genplan, katastar, parcele, ne generički prodajni levak',
@@ -163,12 +160,6 @@ window.MASPLANLOT_I18N = {
     why4: '<strong>Windows + macOS + oblak</strong> — desktop aplikacija sa sinhronizovanim podacima',
     pricingTitle: 'Cene',
     pricingSub: '14 dana besplatno · mesečno ili godišnje (−2 meseca)',
-    planCrmDesc: 'Mapa, klijenti, poslovi, zadaci · 4zida · Halo Oglasi · bez limita projekata',
-    pricingPayment:
-      '<p class="pricing__payment-title">Kako platiti posle probnog perioda</p><ol class="pricing__steps"><li>Platite preko <strong>PayPal @segalcomminc</strong> ili <strong>T-Bank / YooMoney</strong> (Rusija)</li><li>Navedite email MasPlanLot naloga</li><li>Dobijate licencni ključ emailom</li><li>Aktivirajte u aplikaciji → Pretplata</li></ol>',
-    pricingDownloadLink: 'Preuzmi i započni 14-dnevni probni period →',
-    pricingUsdPrefix: 'Mesečno:',
-    pricingUsdYear: 'godišnje:',
     downloadTitle: 'Preuzmi',
     downloadSub:
       'Windows 10/11 · macOS 12+ (Intel i Apple Silicon) · instalirajte i prijavite se',

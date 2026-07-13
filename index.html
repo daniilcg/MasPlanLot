@@ -21,7 +21,7 @@
       </a>
       <nav class="nav">
         <a href="#product" data-i18n="product">Продукт</a>
-        <a href="#pricing" data-i18n="pricing">Цены</a>
+        <a href="#product" data-i18n="pricing">Цены</a>
         <a href="#download" data-i18n="download">Скачать</a>
       </nav>
       <div class="header__actions">
@@ -30,7 +30,7 @@
           <option value="en">EN</option>
           <option value="sr">SR</option>
         </select>
-        <a href="#pricing" class="btn btn--ghost" data-i18n="headerPricing">Цены</a>
+        <a href="#product" class="btn btn--ghost" data-i18n="headerPricing">Цены</a>
         <a href="#download" class="btn btn--primary" data-i18n="trial">14 дней бесплатно</a>
         <button type="button" class="menu-toggle" id="menuToggle" data-i18n-aria="menuOpen" aria-label="Меню">☰</button>
       </div>
@@ -42,10 +42,10 @@
       <button type="button" id="menuClose" data-i18n-aria="menuClose" aria-label="Закрыть">✕</button>
       <nav>
         <a href="#product" data-i18n="product">Продукт</a>
-        <a href="#pricing" data-i18n="pricing">Цены</a>
+        <a href="#product" data-i18n="pricing">Цены</a>
         <a href="#download" data-i18n="download">Скачать</a>
       </nav>
-      <a href="#pricing" class="btn btn--outline" data-i18n="headerPricing">Цены</a>
+      <a href="#product" class="btn btn--outline" data-i18n="headerPricing">Цены</a>
       <a href="#download" class="btn btn--primary" data-i18n="trial">14 дней бесплатно</a>
     </div>
   </div>
@@ -94,22 +94,29 @@
     <section class="section" id="product">
       <div class="container">
         <h2 class="section__title" data-i18n="sectionProduct">MasPlanLot CRM</h2>
+        <p class="section__sub" data-i18n="pricingSub">14 дней бесплатно · помесячно или за год (−2 месяца)</p>
         <article class="box box--crm box--solo">
           <div class="box__head">
             <img src="assets/icon.svg" alt="" width="40" height="40">
             <div>
               <h3>MasPlanLot CRM</h3>
+              <p class="box__price" data-price="crm-month">7 900 ₽/мес</p>
+              <p class="box__year" data-price="crm-year">79 000 ₽/год</p>
             </div>
           </div>
           <p class="box__lead" data-i18n="crmLead">Продажи земельных участков и посёлков — всё в одном приложении.</p>
-          <ul class="box__list">
+          <ul class="box__list box__list--compact">
             <li data-i18n="crmF1">Генплан и карта — статус каждого участка</li>
             <li data-i18n="crmF2">Клиенты, сделки, звонки, счета</li>
             <li data-i18n="crmF3">Команда: владелец, менеджер, просмотр</li>
             <li data-i18n="crmF4">Импорт из Excel и 1С</li>
             <li data-i18n="crmF5">Avito XML, PDF-подборки, лид-форма на витрине</li>
           </ul>
-          <a href="#pricing" class="btn btn--outline btn--block" data-i18n="productPricingCta">Тарифы и оплата</a>
+          <div class="pay-buttons">
+            <a href="#" id="buyPaypal" class="btn btn--paypal btn--block" target="_blank" rel="noopener noreferrer" data-i18n="buyPaypal">Купить · PayPal</a>
+            <a href="#" id="buyYoomoney" class="btn btn--yoomoney btn--block" target="_blank" rel="noopener noreferrer" data-i18n="buyYoomoney">Купить · ЮMoney</a>
+          </div>
+          <p class="pay-after" data-i18n-html="payAfterLicense"></p>
         </article>
       </div>
     </section>
@@ -123,24 +130,6 @@
           <li data-i18n-html="why3"><strong>Для отдела продаж</strong> — карта, CRM, задачи и витрина без лишних инструментов</li>
           <li data-i18n-html="why4"><strong>Windows + macOS + облако</strong> — desktop-приложение, данные синхронизируются</li>
         </ul>
-      </div>
-    </section>
-
-    <section class="section" id="pricing">
-      <div class="container">
-        <h2 class="section__title" data-i18n="pricingTitle">Цены</h2>
-        <p class="section__sub" data-i18n="pricingSub">14 дней бесплатно · помесячно или за год (−2 месяца)</p>
-        <div class="pricing pricing--solo">
-          <article class="plan plan--best">
-            <h3>MasPlanLot CRM</h3>
-            <div class="plan__price" data-price="crm-month">7 900 ₽<small>/мес</small></div>
-            <div class="plan__year" data-price="crm-year">79 000 ₽/год</div>
-            <p data-i18n="planCrmDesc">Карта, клиенты, сделки, задачи · Avito — автозагрузка · без ограничения проектов</p>
-          </article>
-        </div>
-        <p class="pricing__usd" id="pricingUsd">USD: $99 /мес · за год: $990</p>
-        <div class="pricing__payment" data-i18n-html="pricingPayment"></div>
-        <p class="pricing__trial-link"><a href="#download" data-i18n="pricingDownloadLink">Скачать и начать 14‑дневный триал →</a></p>
       </div>
     </section>
 

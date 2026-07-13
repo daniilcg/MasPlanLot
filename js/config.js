@@ -23,4 +23,9 @@ window.MASPLANLOT_CONFIG = {
       mac: 'https://github.com/daniilcg/MasPlanLot/releases/latest/download/MasPlanLot.CRM-0.5.0-mac.dmg',
     },
   },
+  PAYMENTS: {
+    paypal: 'https://paypal.me/segalcomminc',
+    yoomoney: 'https://yoomoney.ru/to/410011855555555',
+    licenseEmail: 'segalcomminc@gmail.com',
+  },
 };
