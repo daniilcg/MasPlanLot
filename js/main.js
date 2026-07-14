@@ -476,6 +476,27 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
+  function initVisitCounter() {
+    const wrap = document.getElementById('visitCounter');
+    const countEl = document.getElementById('visitCount');
+    if (!wrap || !countEl) return;
+
+    const url = 'https://abacus.jasoncameron.dev/hit/masplanlot/sitevisits';
+    fetch(url, { method: 'GET', mode: 'cors', cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((data) => {
+        const n = Number(data && data.value);
+        if (!Number.isFinite(n) || n < 0) return;
+        countEl.textContent = n.toLocaleString('ru-RU');
+        wrap.hidden = false;
+      })
+      .catch(() => {
+        /* keep counter hidden if API unavailable */
+      });
+  }
+
+  initVisitCounter();
+
   function initI18n() {
     const dict = window.MASPLANLOT_I18N || {};
     const select = document.getElementById('siteLang');

@@ -105,6 +105,7 @@ window.MASPLANLOT_I18N = {
     supportSubjectRequired: 'Укажите тему',
     supportMessageRequired: 'Напишите сообщение',
     supportFailed: 'Не удалось отправить. Попробуйте ещё раз или напишите нам через раздел оплаты.',
+    visitsLabel: 'Посещений',
   },
   en: {
     metaTitle: 'MasPlanLot — CRM for land lot sales',
@@ -211,6 +212,7 @@ window.MASPLANLOT_I18N = {
     supportSubjectRequired: 'Enter a subject',
     supportMessageRequired: 'Enter a message',
     supportFailed: 'Could not send. Please try again or contact us via the payment section.',
+    visitsLabel: 'Visits',
   },
   sr: {
     metaTitle: 'MasPlanLot — CRM za prodaju parcela',
@@ -317,5 +319,6 @@ window.MASPLANLOT_I18N = {
     supportSubjectRequired: 'Unesite temu',
     supportMessageRequired: 'Napišite poruku',
     supportFailed: 'Slanje nije uspelo. Pokušajte ponovo ili nas kontaktirajte preko odeljka za plaćanje.',
+    visitsLabel: 'Poseta',
   },
 };
